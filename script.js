@@ -1,18 +1,3 @@
-const themeToggle = document.getElementById("themeToggle");
-const root = document.documentElement;
-const storedTheme = localStorage.getItem("theme");
-
-if (storedTheme) {
-  root.setAttribute("data-theme", storedTheme);
-}
-
-themeToggle.addEventListener("click", () => {
-  const currentTheme = root.getAttribute("data-theme");
-  const nextTheme = currentTheme === "dark" ? "light" : "dark";
-  root.setAttribute("data-theme", nextTheme);
-  localStorage.setItem("theme", nextTheme);
-});
-
 const leadForm = document.getElementById("leadForm");
 const toast = document.getElementById("toast");
 
@@ -20,6 +5,7 @@ leadForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const email = event.target.email.value;
   console.log("Lead capture:", email);
+  toast.textContent = "Thanks! Check your inbox for the free guide.";
   toast.classList.add("show");
   setTimeout(() => toast.classList.remove("show"), 3500);
   event.target.reset();
@@ -52,13 +38,20 @@ buttons.forEach((button) => {
       return;
     }
 
+    const baseUrl = window.location.origin === "null" ? "https://mahjongmastery.com" : window.location.origin;
+
     try {
-      await stripe.redirectToCheckout({
+      const { error } = await stripe.redirectToCheckout({
         lineItems: [{ price: productId, quantity: 1 }],
         mode: "payment",
-        successUrl: `${window.location.origin}/success.html`,
-        cancelUrl: window.location.href,
+        successUrl: `${baseUrl}/success.html`,
+        cancelUrl: `${baseUrl}/index.html`,
       });
+
+      if (error) {
+        console.error("Stripe checkout error:", error);
+        alert("Something went wrong. Please try again.");
+      }
     } catch (error) {
       console.error("Stripe checkout error:", error);
       alert("Something went wrong. Please try again.");

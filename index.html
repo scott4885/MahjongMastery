@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mahjong Mastery — Stop Losing to Players Half Your Skill Level</title>
+  <title>Mahjong Mastery — Warm, Winning Strategy for Women</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://js.stripe.com/v3/"></script>
-    <script>window.STRIPE_PUBLISHABLE_KEY = "pk_live_51Srt6ORRTP7OHPOJQqqcrSoZwliIVsrRuiyOAlwEpibMqR5W3V1bAE3YV6b9rsjq6zhQ8XkAzC1joKI6SxcMZhb400wWH0jvfV";</script>
+  <script>window.STRIPE_PUBLISHABLE_KEY = "pk_live_51Srt6ORRTP7OHPOJQqqcrSoZwliIVsrRuiyOAlwEpibMqR5W3V1bAE3YV6b9rsjq6zhQ8XkAzC1joKI6SxcMZhb400wWH0jvfV";</script>
 </head>
 <body>
   <header class="site-header">
@@ -19,40 +19,37 @@
         <span>Mahjong Mastery</span>
       </div>
       <nav class="nav-links">
-        <a href="#problem">Why You’re Losing</a>
+        <a href="#problem">Why It Feels Hard</a>
         <a href="#courses">Courses</a>
-        <a href="#testimonials">Results</a>
+        <a href="#testimonials">Wins</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <span class="sun">☀️</span>
-        <span class="moon">🌙</span>
-      </button>
+      <button class="btn tile-btn" data-product-id="price_free_tile_guide" data-course-name="Free Tile Guide">Free Tile Guide</button>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="top">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">For women 35–65+ who are tired of losing</p>
-          <h1>Stop Losing to Players Half Your Skill Level</h1>
-          <p class="subhead">You’ve put in the hours, memorized rules, and still feel outsmarted. Mahjong Mastery shows you the exact frameworks top players use to win consistently — without luck or guesswork.</p>
+          <p class="eyebrow">For women 35–65+ who love social Mahjong</p>
+          <h1>We know how frustrating it is to work so hard and still feel outplayed.</h1>
+          <p class="subhead">Mahjong Mastery gives you the gentle, repeatable strategy that finally works — so you sit down feeling calm, confident, and ready to win.</p>
           <div class="hero-cta">
             <form class="lead-form" id="leadForm">
               <input type="email" name="email" placeholder="Enter your email for the FREE Tile Guide" required />
               <button type="submit" class="btn primary">Send Me the Free Guide</button>
             </form>
-            <p class="fine-print">Instant download • No spam • Unsubscribe anytime</p>
+            <p class="fine-print">Instant download • Warm & friendly • Unsubscribe anytime</p>
           </div>
           <div class="hero-stats">
             <div>
               <h3>4,200+</h3>
-              <p>Players trained</p>
+              <p>Players supported</p>
             </div>
             <div>
               <h3>32%</h3>
-              <p>Average win-rate boost</p>
+              <p>Average win-rate lift</p>
             </div>
             <div>
               <h3>30 days</h3>
@@ -61,55 +58,62 @@
           </div>
         </div>
         <div class="hero-media">
-          <img src="images/hero.svg" alt="Women enjoying strategic Mahjong game" />
-          <div class="hero-badge">Free Bonus: Winning Quick Mini-Guide included</div>
+          <figure class="hero-figure">
+            <img src="images/hero/hero-women-mahjong.svg" alt="Group of women in their 40s-60s laughing around a Mahjong table" />
+            <figcaption>Placeholder: joyful game night with friends</figcaption>
+          </figure>
+          <div class="hero-badge">Free Bonus: Winning Quick mini-guide included</div>
         </div>
       </div>
     </section>
 
     <section class="trust-strip">
       <div class="container">
-        <p>Featured strategies trusted by home leagues, community centers, and weekly Mahjong groups across the U.S.</p>
+        <p>Trusted by home leagues, community centers, and weekly Mahjong circles across the U.S.</p>
       </div>
     </section>
+
+    <div class="ornamental-divider" aria-hidden="true"></div>
 
     <section id="problem" class="section problem">
       <div class="container">
         <div class="section-heading">
-          <h2>You’re not losing because you’re bad — you’re losing because you were never taught the winning system.</h2>
-          <p>Most players rely on luck, gut instinct, and “pretty” hands. That’s why your results feel random and your confidence dips every time you sit down.</p>
+          <h2>You’re not “bad” at Mahjong — you just never got the strategy that makes it click.</h2>
+          <p>Most players were taught rules, not decision-making. We see you: the losing streaks, the Charleston stress, the confidence dip. You deserve a system that finally feels clear.</p>
         </div>
         <div class="card-grid">
-          <div class="card">
+          <div class="card tile-card">
             <h3>Endless losing streaks</h3>
             <p>You play for hours, finish last, and wonder what everyone else seems to know.</p>
           </div>
-          <div class="card">
+          <div class="card tile-card">
             <h3>Charleston confusion</h3>
-            <p>Passing tiles feels like roulette. One wrong move, and your hand collapses.</p>
+            <p>Passing tiles feels like roulette. One wrong move and the whole hand slips away.</p>
           </div>
-          <div class="card">
+          <div class="card tile-card">
             <h3>Outplayed by “weaker” players</h3>
-            <p>They finish hands quickly while you chase perfect tiles that never come.</p>
+            <p>They finish quickly while you chase perfect tiles that never show up.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <div class="ornamental-divider" aria-hidden="true"></div>
+
     <section class="section solution">
       <div class="container solution-grid">
         <div>
-          <h2>Finally win with a clear, repeatable strategy.</h2>
-          <p>Mahjong Mastery is a progression of five guides that walk you from rules to advanced dominance. Each course gives you the frameworks and decision-making steps to win more — without guessing.</p>
+          <h2>Finally win with a calm, repeatable strategy.</h2>
+          <p>Mahjong Mastery is a gentle progression of five guides that walk you from rules to advanced confidence. You’ll learn how to choose hands you can finish, read the table, and play with clarity — not luck.</p>
           <ul class="checklist">
             <li>Choose hands you can actually finish</li>
             <li>Know exactly when to expose (and when to stay hidden)</li>
             <li>Read the table so you stop donating wins</li>
-            <li>Use jokers and swaps like a pro</li>
+            <li>Use jokers and swaps with confidence</li>
           </ul>
         </div>
         <div class="tile-visual">
-          <img src="images/tile-diagram.svg" alt="Mahjong tile diagram showing pungs, kongs, runs, and pairs" />
+          <img src="images/tiles/tile-flatlay.svg" alt="Elegant flat-lay of Mahjong tiles with flowers" />
         </div>
       </div>
     </section>
@@ -118,12 +122,12 @@
       <div class="container">
         <div class="section-heading">
           <h2>Choose your winning path</h2>
-          <p>Start with the level that matches your confidence — or go all-in with the complete mastery bundle.</p>
+          <p>Start gently with the level that matches your confidence — or go all-in with the complete mastery bundle.</p>
         </div>
         <div class="course-grid">
           <article class="course-card highlight">
             <div class="course-cover">
-              <img src="images/cover-free.svg" alt="Free Tile Guide cover" />
+              <img src="images/tiles/cover-free-guide.svg" alt="Free Tile Guide cover" />
             </div>
             <div class="course-content">
               <h3>Free Tile Guide</h3>
@@ -146,7 +150,7 @@
 
           <article class="course-card">
             <div class="course-cover">
-              <img src="images/cover-101.svg" alt="Mahjong 101 course cover" />
+              <img src="images/tiles/cover-101.svg" alt="Mahjong 101 course cover" />
             </div>
             <div class="course-content">
               <h3>Mahjong 101 — American Mahjong Made Simple</h3>
@@ -170,11 +174,11 @@
 
           <article class="course-card">
             <div class="course-cover">
-              <img src="images/cover-winning-quick.svg" alt="Winning Quick course cover" />
+              <img src="images/tiles/cover-winning-quick.svg" alt="Winning Quick course cover" />
             </div>
             <div class="course-content">
               <h3>Winning Quick — The FAST Framework</h3>
-              <p class="course-tag">Mini-guide • Perfect upsell for fast wins</p>
+              <p class="course-tag">Mini-guide • Gentle wins, fast</p>
               <ul>
                 <li>Pick hands you can finish today</li>
                 <li>Stop donating wins immediately</li>
@@ -193,7 +197,7 @@
 
           <article class="course-card">
             <div class="course-cover">
-              <img src="images/cover-201.svg" alt="Mahjong 201 course cover" />
+              <img src="images/tiles/cover-201.svg" alt="Mahjong 201 course cover" />
             </div>
             <div class="course-content">
               <h3>Mahjong 201 — The Consistency Playbook</h3>
@@ -216,7 +220,7 @@
 
           <article class="course-card">
             <div class="course-cover">
-              <img src="images/cover-301.svg" alt="Mahjong 301 course cover" />
+              <img src="images/tiles/cover-301.svg" alt="Mahjong 301 course cover" />
             </div>
             <div class="course-content">
               <h3>Mahjong 301 — Advanced Strategy Guide</h3>
@@ -250,6 +254,8 @@
       </div>
     </section>
 
+    <div class="ornamental-divider" aria-hidden="true"></div>
+
     <section id="testimonials" class="section testimonials">
       <div class="container">
         <div class="section-heading">
@@ -258,17 +264,17 @@
         </div>
         <div class="testimonial-grid">
           <div class="testimonial-card">
-            <img src="images/testimonial-1.svg" alt="Portrait of Susan, Mahjong student" />
+            <img src="images/testimonials/testimonial-1.svg" alt="Selfie-style photo of Susan holding a winning Mahjong rack" />
             <blockquote>“I went from 1 win every few weeks to winning almost every game night. The FAST framework alone paid for the course.”</blockquote>
             <p class="testimonial-name">Susan L., Dallas</p>
           </div>
           <div class="testimonial-card">
-            <img src="images/testimonial-2.svg" alt="Portrait of Marina, Mahjong student" />
+            <img src="images/testimonials/testimonial-2.svg" alt="Selfie-style photo of Marina holding a Mahjong rack" />
             <blockquote>“Mahjong 201 finally explained what strong players were doing. I stopped guessing and started winning.”</blockquote>
             <p class="testimonial-name">Marina H., Phoenix</p>
           </div>
           <div class="testimonial-card">
-            <img src="images/testimonial-3.svg" alt="Portrait of Denise, Mahjong student" />
+            <img src="images/testimonials/testimonial-3.svg" alt="Selfie-style photo of Denise smiling with her Mahjong rack" />
             <blockquote>“I used to feel embarrassed at the table. Now I’m calm, strategic, and my friends ask for my advice.”</blockquote>
             <p class="testimonial-name">Denise R., Atlanta</p>
           </div>
@@ -310,7 +316,7 @@
       <div class="container">
         <div class="final-card">
           <h2>It’s time to win with confidence.</h2>
-          <p>Stop wasting nights feeling outsmarted. Get the frameworks, play smarter, and watch your win rate climb.</p>
+          <p>Stop wasting nights feeling outsmarted. Get the strategy that finally works and enjoy every table.</p>
           <div class="final-actions">
             <button class="btn primary" data-product-id="price_1SygxcRRTP7OHPOJud7HmdBx" data-course-name="Mahjong 101">Start with Mahjong 101</button>
             <button class="btn ghost" data-product-id="price_1SygxdRRTP7OHPOJ16akmk8d" data-course-name="Mahjong 301">Go Advanced</button>
@@ -329,7 +335,7 @@
       <div>
         <h4>Explore</h4>
         <a href="#courses">Courses</a>
-        <a href="#problem">Why You’re Losing</a>
+        <a href="#problem">Why It Feels Hard</a>
         <a href="#faq">FAQ</a>
       </div>
       <div>
