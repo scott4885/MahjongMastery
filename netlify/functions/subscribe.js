@@ -1,37 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-
-const DATA_DIR = path.join(process.cwd(), "netlify", "data");
-const SUBSCRIBERS_FILE = path.join(DATA_DIR, "subscribers.json");
-
 const headers = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "Content-Type",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Content-Type": "application/json",
-};
-
-const ensureDataFile = () => {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  if (!fs.existsSync(SUBSCRIBERS_FILE)) {
-    fs.writeFileSync(SUBSCRIBERS_FILE, JSON.stringify([]));
-  }
-};
-
-const readSubscribers = () => {
-  ensureDataFile();
-  const raw = fs.readFileSync(SUBSCRIBERS_FILE, "utf8");
-  try {
-    return JSON.parse(raw);
-  } catch (error) {
-    return [];
-  }
-};
-
-const writeSubscribers = (subscribers) => {
-  fs.writeFileSync(SUBSCRIBERS_FILE, JSON.stringify(subscribers, null, 2));
 };
 
 const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
@@ -61,22 +32,60 @@ exports.handler = async (event) => {
       };
     }
 
-    const subscribers = readSubscribers();
-    const existing = subscribers.find((entry) => entry.email === email);
+    const apiKey = process.env.MAILCHIMP_API_KEY;
+    const listId = process.env.MAILCHIMP_LIST_ID || "1cc11f7750";
+    const server = process.env.MAILCHIMP_SERVER || "us13";
 
-    if (!existing) {
-      subscribers.push({
-        email,
-        source: body.source || "lead_form",
-        createdAt: new Date().toISOString(),
-      });
-      writeSubscribers(subscribers);
+    if (!apiKey) {
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({ success: false, error: "Mailchimp API key missing" }),
+      };
     }
 
+    const endpoint = `https://${server}.api.mailchimp.com/3.0/lists/${listId}/members`;
+    const auth = Buffer.from(`anystring:${apiKey}`).toString("base64");
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Basic ${auth}`,
+      },
+      body: JSON.stringify({
+        email_address: email,
+        status: "subscribed",
+      }),
+    });
+
+    if (response.ok) {
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({ success: true }),
+      };
+    }
+
+    const data = await response.json().catch(() => ({}));
+    const message = data.detail || data.title || "Mailchimp error";
+
+    if (
+      response.status === 400 &&
+      (data.title === "Member Exists" || /already a list member/i.test(message))
+    ) {
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({ success: true }),
+      };
+    }
+
+    console.error("Mailchimp subscribe error:", data);
     return {
-      statusCode: 200,
+      statusCode: 500,
       headers,
-      body: JSON.stringify({ success: true }),
+      body: JSON.stringify({ success: false, error: message }),
     };
   } catch (error) {
     console.error("Subscribe error:", error);

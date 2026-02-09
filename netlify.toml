@@ -1,6 +1,18 @@
 [functions]
   directory = "netlify/functions"
 
+[build.environment]
+  NODE_VERSION = "18"
+
+[context.production.environment]
+  MAILCHIMP_LIST_ID = "1cc11f7750"
+  MAILCHIMP_SERVER = "us13"
+
+[[redirects]]
+  from = "/api/create-checkout-session"
+  to = "/.netlify/functions/create-checkout-session"
+  status = 200
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"

@@ -16,7 +16,8 @@ leadForm.addEventListener("submit", async (event) => {
       throw new Error("Subscribe failed");
     }
 
-    toast.textContent = "Thanks! Check your inbox for the free guide.";
+    window.location.href = "/courses/free-tile-guide.html";
+    return;
   } catch (error) {
     console.error("Lead capture error:", error);
     toast.textContent = "Oops! Please try again in a moment.";
@@ -28,12 +29,6 @@ leadForm.addEventListener("submit", async (event) => {
 });
 
 const buttons = document.querySelectorAll("button[data-product-id]");
-const publishableKey = window.STRIPE_PUBLISHABLE_KEY || "";
-let stripe = null;
-
-if (publishableKey && window.Stripe) {
-  stripe = window.Stripe(publishableKey);
-}
 
 buttons.forEach((button) => {
   button.addEventListener("click", async () => {
@@ -48,26 +43,24 @@ buttons.forEach((button) => {
       return;
     }
 
-    if (!stripe) {
-      console.warn("Stripe publishable key missing or Stripe.js not loaded.");
-      alert("Checkout is unavailable right now. Please try again later.");
-      return;
-    }
-
-    const baseUrl = window.location.origin === "null" ? "https://mahjongmastery.com" : window.location.origin;
-
     try {
-      const { error } = await stripe.redirectToCheckout({
-        lineItems: [{ price: productId, quantity: 1 }],
-        mode: "payment",
-        successUrl: `${baseUrl}/success.html`,
-        cancelUrl: `${baseUrl}/index.html`,
+      const response = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ priceId: productId }),
       });
 
-      if (error) {
-        console.error("Stripe checkout error:", error);
-        alert("Something went wrong. Please try again.");
+      if (!response.ok) {
+        throw new Error("Checkout session failed");
       }
+
+      const data = await response.json();
+
+      if (!data.url) {
+        throw new Error("Missing checkout URL");
+      }
+
+      window.location.href = data.url;
     } catch (error) {
       console.error("Stripe checkout error:", error);
       alert("Something went wrong. Please try again.");
