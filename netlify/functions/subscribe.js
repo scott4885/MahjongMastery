@@ -60,6 +60,13 @@ exports.handler = async (event) => {
     });
 
     if (response.ok) {
+      // Send welcome email asynchronously (don't block on it)
+      fetch(`${process.env.URL || 'https://winningatmahjong.shop'}/.netlify/functions/send-welcome`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      }).catch(err => console.error('Welcome email failed:', err));
+      
       return {
         statusCode: 200,
         headers,
