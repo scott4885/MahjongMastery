@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MAHJONG 201 | Mahjong Mastery</title>
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --rose: #D4A5A5;
+    --sage: #A8B5A0;
+    --ink: #2f2f2f;
+    --accent: #7b5b5b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+  }
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 64px 64px 96px;
+    background: var(--cream);
+  }
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(160deg, #FAF7F2 0%, #F5ECE8 55%, #E9D8D6 100%);
+    border-bottom: 8px solid var(--sage);
+  }
+  .cover .title {
+    font-size: 52px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .cover .subtitle {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+  .cover .tagline {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  .cover .author {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--sage);
+  }
+  .cover .price {
+    margin-top: 12px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--accent);
+  }
+  .tile-art {
+    display: flex;
+    gap: 24px;
+    margin: 32px 0;
+  }
+  .tile-svg {
+    width: 70px;
+    height: 90px;
+    border-radius: 10px;
+    background: #fff;
+    border: 2px solid var(--sage);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    padding: 8px;
+  }
+  h1, h2, h3, h4 {
+    font-family: "Palatino Linotype", "Book Antiqua", serif;
+    color: #3b2f2f;
+  }
+  h2 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--rose);
+  }
+  h3 {
+    font-size: 20px;
+    margin-top: 24px;
+  }
+  .tile-icon { margin-right: 8px; }
+  .divider {
+    border: none;
+    border-top: 2px solid var(--sage);
+    margin: 24px 0;
+  }
+  .toc {
+    margin: 24px 0 48px;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid var(--rose);
+    border-radius: 12px;
+  }
+  .toc h2 { margin-top: 0; }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  ul, ol { padding-left: 24px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  th { background: #f2ece8; }
+  .table-wrap { margin: 16px 0; overflow-x: auto; }
+
+  .key-takeaway {
+    background: #f8e9e9;
+    border-left: 4px solid var(--rose);
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-style: italic;
+  }
+  .practice-box {
+    border: 2px solid var(--sage);
+    background: #fff;
+    padding: 16px 18px;
+    margin: 18px 0;
+    border-radius: 10px;
+  }
+
+  footer.footer {
+    position: fixed;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+  }
+  .page-number:before { content: counter(page); }
+
+  @media print {
+    body { background: #fff; color: #000; }
+    .page { background: #fff; padding: 32px; }
+    .cover { background: #fff; border: none; }
+    .tile-art, .tile-svg { display: none !important; }
+    a { color: #000; text-decoration: none; }
+    .chapter { break-before: page; }
+    .chapter:first-of-type { break-before: auto; }
+    .toc { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+  <section class="cover page">
+    <div class="tile-art">
+      <div class="tile-svg">
+<svg viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="8" width="64" height="94" rx="8" fill="#fefdfb" stroke="#A8B5A0" stroke-width="2"/>
+  <rect x="24" y="18" width="10" height="70" rx="4" fill="#A8B5A0"/>
+  <rect x="46" y="18" width="10" height="70" rx="4" fill="#A8B5A0"/>
+  <circle cx="29" cy="40" r="3" fill="#D4A5A5"/>
+  <circle cx="51" cy="60" r="3" fill="#D4A5A5"/>
+</svg></div>
+      <div class="tile-svg">
+<svg viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="8" width="64" height="94" rx="8" fill="#fefdfb" stroke="#D4A5A5" stroke-width="2"/>
+  <circle cx="40" cy="48" r="10" fill="#D4A5A5"/>
+  <circle cx="30" cy="40" r="8" fill="#F2D0D0"/>
+  <circle cx="50" cy="40" r="8" fill="#F2D0D0"/>
+  <circle cx="30" cy="56" r="8" fill="#F2D0D0"/>
+  <circle cx="50" cy="56" r="8" fill="#F2D0D0"/>
+  <rect x="37" y="60" width="6" height="24" fill="#A8B5A0"/>
+</svg></div>
+      <div class="tile-svg">
+<svg viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="8" width="64" height="94" rx="8" fill="#fefdfb" stroke="#A8B5A0" stroke-width="2"/>
+  <path d="M24 70 C34 50, 50 50, 58 68" fill="none" stroke="#A8B5A0" stroke-width="4"/>
+  <circle cx="34" cy="54" r="6" fill="#D4A5A5"/>
+  <circle cx="48" cy="54" r="6" fill="#D4A5A5"/>
+  <circle cx="30" cy="54" r="2" fill="#3b2f2f"/>
+</svg></div>
+    </div>
+    <div class="title">MAHJONG 201</div>
+    <div class="subtitle">The Consistency Playbook</div>
+    <div class="tagline">Win More Without Getting Lucky</div>
+    <div class="author">By Mahjong Mastery</div>
+    <div class="price">$67</div>
+  </section>
+
+  <section class="page">
+    <div class="toc">
+      <h2>Table of Contents</h2>
+      <ul><li><a href="#welcome-to-intermediate-strategy">WELCOME TO INTERMEDIATE STRATEGY</a></li>
+<li><a href="#the-intermediate-shift">THE INTERMEDIATE SHIFT</a></li>
+<li><a href="#the-scan-shape-commit-defend-framework">THE SCAN-SHAPE-COMMIT-DEFEND FRAMEWORK</a></li>
+<li><a href="#chapter-1-hand-selection-like-a-pro">CHAPTER 1: HAND SELECTION LIKE A PRO</a></li>
+<li><a href="#chapter-2-shape-tile-efficiency-flexible-builds">CHAPTER 2: SHAPE - TILE EFFICIENCY + FLEXIBLE BUILDS</a></li>
+<li><a href="#chapter-3-exposure-strategy-the-real-rules">CHAPTER 3: EXPOSURE STRATEGY (THE REAL RULES)</a></li>
+<li><a href="#chapter-4-joker-management-intermediate-level">CHAPTER 4: JOKER MANAGEMENT (INTERMEDIATE LEVEL)</a></li>
+<li><a href="#chapter-5-charleston-strategy-intermediate">CHAPTER 5: CHARLESTON STRATEGY (INTERMEDIATE)</a></li>
+<li><a href="#chapter-6-table-reading-101">CHAPTER 6: TABLE READING 101</a></li>
+<li><a href="#chapter-7-timing-when-to-pivot-vs-when-to-commit">CHAPTER 7: TIMING - WHEN TO PIVOT VS. WHEN TO COMMIT</a></li>
+<li><a href="#chapter-8-defend-stop-feeding-the-table">CHAPTER 8: DEFEND - STOP FEEDING THE TABLE</a></li>
+<li><a href="#chapter-9-endgame-decisions">CHAPTER 9: ENDGAME DECISIONS</a></li>
+<li><a href="#chapter-10-dallas-mahjong-blanks-strategy-add-on">CHAPTER 10: DALLAS MAHJONG / BLANKS STRATEGY ADD-ON</a></li>
+<li><a href="#chapter-11-intermediate-rules-of-thumb-30">CHAPTER 11: INTERMEDIATE RULES OF THUMB (30+)</a></li>
+<li><a href="#chapter-12-practice-pack-10-scenarios">CHAPTER 12: PRACTICE PACK - 10 SCENARIOS</a></li>
+<li><a href="#self-scoring-rubric">SELF-SCORING RUBRIC</a></li>
+<li><a href="#whats-next">WHAT'S NEXT?</a></li>
+<li><a href="#ready-for-advanced-play">READY FOR ADVANCED PLAY?</a></li></ul>
+    </div>
+    <hr class="divider" />
+<section class="chapter" id="welcome-to-intermediate-strategy">
+<h2><span class="tile-icon">🀄</span>WELCOME TO INTERMEDIATE STRATEGY</h2>
+<p>You know the rules. You've played dozens of games. You can read the card and finish hands.</p>
+<div class="key-takeaway"><strong>But you're frustrated because:</strong></div>
+<ul>
+<li>You lose to players who seem to know something you don't</li>
+<li>Your wins feel random, not repeatable</li>
+<li>You make the same mistakes over and over</li>
+<li>You can't figure out what the "good players" are doing differently</li>
+</ul>
+<div class="key-takeaway"><strong>This guide changes everything.</strong></div>
+<p>You're about to learn the decision-making systems that separate casual players from consistent winners. These are the frameworks that strong players use—often without realizing it.</p>
+<div class="key-takeaway"><strong>What You'll Master:</strong></div>
+<ul>
+<li>The SCAN-SHAPE-COMMIT-DEFEND Framework</li>
+<li>Advanced hand selection (picking winners, not losers)</li>
+<li>Exposure strategy that actually works</li>
+<li>Joker management like a pro</li>
+<li>Table reading and opponent tells</li>
+<li>When to pivot vs. when to commit</li>
+<li>Defensive play that stops feeding wins</li>
+</ul>
+<div class="key-takeaway"><strong>By the end of this guide, you'll have a systematic approach to every decision.</strong></div>
+<p>Let's get started.</p>
+<hr class="divider" />
+</section>
+<section class="chapter" id="the-intermediate-shift">
+<h2><span class="tile-icon">🀄</span>THE INTERMEDIATE SHIFT</h2>
+<h3><span class="tile-icon">🀄</span>From "Playing a Hand" to "Playing the Table"</h3>
+<div class="key-takeaway"><strong>Beginners ask:</strong> "What tiles do I need?"</div>
+<div class="key-takeaway"><strong>Intermediate players ask:</strong> "What tiles are available, what do my opponents need, and how do I finish first?"</div>
+<h3><span class="tile-icon">🀄</span>Why Intermediate Players Plateau</h3>
+<p>Most players get stuck because they:</p>
+<ol>
+<li>Pick hands based on emotion, not probability</li>
+<li>Expose too early or too late</li>
+<li>Don't track what's been discarded</li>
+<li>Play in a vacuum (ignoring opponents)</li>
+<li>Lack a decision framework</li>
+</ol>
+<div class="key-takeaway"><strong>The good news:</strong> These are all fixable with the right system.</div>
+<h3><span class="tile-icon">🀄</span>What Wins More Games: Flexibility + Timing</h3>
+<div class="key-takeaway"><strong>Flexibility</strong> = Keeping options open until the right moment</div>
+<div class="key-takeaway"><strong>Timing</strong> = Knowing when to commit, when to pivot, when to push, when to defend</div>
+<p>Master these two concepts, and your win rate jumps immediately.</p>
+<hr class="divider" />
+</section>
+<section class="chapter" id="the-scan-shape-commit-defend-framework">
+<h2><span class="tile-icon">🀄</span>THE SCAN-SHAPE-COMMIT-DEFEND FRAMEWORK</h2>
+<p>This is your decision-making loop for EVERY game.</p>
+<h3><span class="tile-icon">🀄</span>SCAN</h3>
+<div class="key-takeaway"><strong>Read the table + card options</strong></div>
+<p>Before choosing a hand:</p>
+<ul>
+<li>What tiles did I keep through Charleston?</li>
+<li>What tiles am I drawing?</li>
+<li>What sections of the card match my tiles?</li>
+<li>What are opponents likely playing (based on Charleston)?</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>SHAPE</h3>
+<div class="key-takeaway"><strong>Build the most flexible version of your hand</strong></div>
+<p>While keeping options alive:</p>
+<ul>
+<li>Hold "bridge tiles" that fit multiple hands</li>
+<li>Keep 2-3 possible hands in play</li>
+<li>Avoid locking in too early</li>
+<li>Build melds that overlap between hands</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>COMMIT</h3>
+<div class="key-takeaway"><strong>Choose the line and speed up</strong></div>
+<p>When you have clear progress:</p>
+<ul>
+<li>Select your final hand</li>
+<li>Start building aggressively</li>
+<li>Use jokers strategically</li>
+<li>Expose when it accelerates without killing you</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>DEFEND</h3>
+<div class="key-takeaway"><strong>Stop feeding wins and protect position</strong></div>
+<p>When opponents are close:</p>
+<ul>
+<li>Read danger tiles</li>
+<li>Discard safely</li>
+<li>Slow down if needed</li>
+<li>Finish second instead of donating a win</li>
+</ul>
+<div class="key-takeaway"><strong>This framework applies to EVERY SINGLE GAME.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-1-hand-selection-like-a-pro">
+<h2><span class="tile-icon">🀄</span>CHAPTER 1: HAND SELECTION LIKE A PRO</h2>
+<h3><span class="tile-icon">🀄</span>The Five Factors</h3>
+<div class="key-takeaway"><strong>1. Tile Density (Most Important)</strong></div>
+<p>Which tiles exist in abundance?</p>
+<p>Example:</p>
+<ul>
+<li>You have: 4-4-4-5-6-7-8 Bams</li>
+<li>That's 7 Bams in a concentrated range</li>
+<li>HIGH DENSITY = Look for Bam runs or pungs</li>
+</ul>
+<div class="key-takeaway"><strong>Low density:</strong></div>
+<ul>
+<li>You have: 2 Dot, 7 Crak, North, Flower</li>
+<li>Random tiles = HARD to build</li>
+</ul>
+<div class="key-takeaway"><strong>Rule:</strong> Choose hands supported by your tile density.</div>
+<div class="key-takeaway"><strong>2. Joker Count</strong></div>
+<ul>
+<li>0 jokers = Choose hands with common tiles</li>
+<li>1-2 jokers = Standard flexibility</li>
+<li>3+ jokers = Aggressive/faster hands</li>
+</ul>
+<div class="key-takeaway"><strong>Why:</strong> Jokers let you complete difficult melds. More jokers = more ambitious hands become viable.</div>
+<div class="key-takeaway"><strong>3. Early Draws</strong></div>
+<p>Your first 3-4 draws tell you a lot.</p>
+<p>Drawing:</p>
+<ul>
+<li>Pairs? → Pair-heavy hands</li>
+<li>Runs? → Run-based hands</li>
+<li>Honors? → Winds/Dragons hands</li>
+</ul>
+<div class="key-takeaway"><strong>Don't ignore early signals.</strong></div>
+<div class="key-takeaway"><strong>4. Charleston Outcomes</strong></div>
+<p>What came back to you?</p>
+<ul>
+<li>Got back Dots? → Dots are available</li>
+<li>Got back Winds? → Others passing honors</li>
+<li>Got random junk? → Stay flexible longer</li>
+</ul>
+<div class="key-takeaway"><strong>5. Avoiding "Trap Hands"</strong></div>
+<p>Trap hands LOOK good but are statistical nightmares.</p>
+<div class="key-takeaway"><strong>Red flags:</strong></div>
+<ul>
+<li>Requires 5+ exact singles</li>
+<li>Needs tiles that rarely get discarded</li>
+<li>Depends on perfect draws</li>
+<li>Has no joker flexibility</li>
+</ul>
+<div class="key-takeaway"><strong>Example trap hand:</strong></div>
+<ul>
+<li>FFFF 1111 9999 DDDD (Flowers, Ones, Nines, Dragons)</li>
+<li>Looks cool, but you need 4 flowers + exact pungs + dragons</li>
+<li>Probability = VERY LOW</li>
+</ul>
+<div class="key-takeaway"><strong>Better:</strong> Choose hands with flexibility built in.</div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-2-shape-tile-efficiency-flexible-builds">
+<h2><span class="tile-icon">🀄</span>CHAPTER 2: SHAPE - TILE EFFICIENCY + FLEXIBLE BUILDS</h2>
+<h3><span class="tile-icon">🀄</span>Keeping Options Alive</h3>
+<div class="key-takeaway"><strong>The 2-Hand Minimum Rule</strong></div>
+<p>Until you're 60% toward one hand, keep TWO hands viable.</p>
+<p>Example:</p>
+<ul>
+<li>Hand A: 111 222 333 DDD (Ones, Twos, Threes, Dragons)</li>
+<li>Hand B: 1111 2222 3333 (Ones, Twos, Threes—kongs)</li>
+</ul>
+<div class="key-takeaway"><strong>Your tiles:</strong> 1-1-1-2-2-3-3-3-Red Dragon-Red Dragon</div>
+<div class="key-takeaway"><strong>You can build toward EITHER hand</strong> until you commit.</div>
+<h3><span class="tile-icon">🀄</span>How to Hold "Bridge Tiles"</h3>
+<p>Bridge tiles fit multiple hands.</p>
+<p>Example:</p>
+<ul>
+<li>You have: 5-6-7 Dots</li>
+<li>Hand A needs: 5-6-7-8 run</li>
+<li>Hand B needs: 4-5-6-7 run</li>
+</ul>
+<div class="key-takeaway"><strong>The 6-7 are bridge tiles.</strong> They overlap both hands.</div>
+<div class="key-takeaway"><strong>Keep these as long as possible.</strong></div>
+<h3><span class="tile-icon">🀄</span>When a Hand Is Secretly Dead</h3>
+<div class="key-takeaway"><strong>Dead hand signs:</strong></div>
+<ul>
+<li>You need 4 specific tiles, and 3 have been discarded</li>
+<li>Two opponents exposed your tiles</li>
+<li>You're on turn 15 and have made zero progress</li>
+<li>You'd need perfect draws for 6+ consecutive turns</li>
+</ul>
+<div class="key-takeaway"><strong>Don't be stubborn. Dead is dead.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-3-exposure-strategy-the-real-rules">
+<h2><span class="tile-icon">🀄</span>CHAPTER 3: EXPOSURE STRATEGY (THE REAL RULES)</h2>
+<h3><span class="tile-icon">🀄</span>When Exposures Help</h3>
+<div class="key-takeaway"><strong>Expose when:</strong></div>
+<ol>
+<li><strong>You're 3-4 tiles from winning</strong></li>
+</ol>
+<ul>
+<li>Close enough that locking in is safe</li>
+</ul>
+<ol>
+<li><strong>The tile is rare and won't come again</strong></li>
+</ol>
+<ul>
+<li>Example: You need the 4th Red Dragon, someone throws it</li>
+</ul>
+<ol>
+<li><strong>You have jokers backing you up</strong></li>
+</ol>
+<ul>
+<li>Jokers give you flexibility even after exposing</li>
+</ul>
+<ol>
+<li><strong>You can finish in 2-4 more draws</strong></li>
+</ol>
+<ul>
+<li>Speed matters—get there first</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>When Exposures Lock You In (Dangerous)</h3>
+<div class="key-takeaway"><strong>Don't expose if:</strong></div>
+<ol>
+<li><strong>You're still deciding between 2-3 hands</strong></li>
+</ol>
+<ul>
+<li>Exposing kills your options</li>
+</ul>
+<ol>
+<li><strong>You need multiple exact singles later</strong></li>
+</ol>
+<ul>
+<li>Exposing won't help; you'll still need perfect draws</li>
+</ul>
+<ol>
+<li><strong>You're early (before turn 8-10)</strong></li>
+</ol>
+<ul>
+<li>Too soon; you don't have enough information</li>
+</ul>
+<ol>
+<li><strong>The table is moving slow</strong></li>
+</ol>
+<ul>
+<li>No pressure = stay concealed longer</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>The "One Exposure" Advantage</h3>
+<div class="key-takeaway"><strong>One exposure</strong> puts pressure on opponents without fully revealing your hand.</div>
+<p>Example:</p>
+<ul>
+<li>You expose: <strong>6-6-6 Craks</strong></li>
+<li>Opponents know you're on Craks, but don't know:</li>
+<li>Are you doing runs?</li>
+<li>Kongs?</li>
+<li>Mixed suits?</li>
+</ul>
+<div class="key-takeaway"><strong>Strategic ambiguity = power.</strong></div>
+<h3><span class="tile-icon">🀄</span>When to Stay Concealed Longer</h3>
+<div class="key-takeaway"><strong>Stay concealed when:</strong></div>
+<ul>
+<li>You're winning the race (ahead of others)</li>
+<li>You want to hide your direction</li>
+<li>You can finish without exposing</li>
+<li>Opponents are aggressive (let them expose and fight)</li>
+</ul>
+<div class="key-takeaway"><strong>Concealed wins are often safer wins.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-4-joker-management-intermediate-level">
+<h2><span class="tile-icon">🀄</span>CHAPTER 4: JOKER MANAGEMENT (INTERMEDIATE LEVEL)</h2>
+<h3><span class="tile-icon">🀄</span>Playing Joker-Rich vs. Joker-Poor</h3>
+<div class="key-takeaway"><strong>With 0-1 Jokers:</strong></div>
+<ul>
+<li>Choose common-tile hands</li>
+<li>Avoid trap hands</li>
+<li>Focus on hands with high tile availability</li>
+<li>Play conservatively</li>
+</ul>
+<div class="key-takeaway"><strong>With 2-3 Jokers:</strong></div>
+<ul>
+<li>Standard strategy</li>
+<li>Use jokers for hard-to-complete melds</li>
+<li>Moderate aggression</li>
+</ul>
+<div class="key-takeaway"><strong>With 4+ Jokers:</strong></div>
+<ul>
+<li>AGGRESSIVE strategy</li>
+<li>Target faster hands</li>
+<li>Expose earlier (you have backup)</li>
+<li>Push tempo</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>When to Chase a Joker Swap</h3>
+<div class="key-takeaway"><strong>In Dallas Mahjong (blanks), you can swap jokers from exposed melds.</strong></div>
+<div class="key-takeaway"><strong>Chase a swap when:</strong></div>
+<ul>
+<li>You have the exact tile</li>
+<li>The joker solves a critical problem</li>
+<li>It's your turn and low-risk</li>
+</ul>
+<div class="key-takeaway"><strong>Don't chase when:</strong></div>
+<ul>
+<li>The swap doesn't meaningfully help</li>
+<li>You'd have to break your hand to get the tile</li>
+<li>The player is close to Mahjong (they might win before you use it)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>How to Avoid Joker Bait Mistakes</h3>
+<div class="key-takeaway"><strong>Joker bait = exposing jokers too early, making them swap targets</strong></div>
+<div class="key-takeaway"><strong>Protect jokers by:</strong></div>
+<ul>
+<li>Exposing joker melds LAST (when you're 1-2 tiles from Mahjong)</li>
+<li>Using real tiles for early exposures</li>
+<li>Keeping joker melds concealed longer</li>
+</ul>
+<div class="key-takeaway"><strong>Example:</strong></div>
+<p>You have:</p>
+<ul>
+<li>5-5-5 Bams (real tiles)</li>
+<li>8-8-Joker Craks (one joker)</li>
+</ul>
+<div class="key-takeaway"><strong>Expose the Bams first.</strong> Save the joker meld for when you're close.</div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-5-charleston-strategy-intermediate">
+<h2><span class="tile-icon">🀄</span>CHAPTER 5: CHARLESTON STRATEGY (INTERMEDIATE)</h2>
+<h3><span class="tile-icon">🀄</span>Passing with Intention</h3>
+<p>Intermediate Charleston isn't random cleanup—it's <strong>strategic shaping</strong>.</p>
+<h3><span class="tile-icon">🀄</span>Pass 1 (Right): Information Gathering</h3>
+<div class="key-takeaway"><strong>What to pass:</strong></div>
+<ul>
+<li>Tiles from suits you're definitely not using</li>
+<li>Isolated honors</li>
+</ul>
+<div class="key-takeaway"><strong>What to watch:</strong></div>
+<ul>
+<li>What came back? (Signals what's available)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Pass 2 (Across): Directional Commitment</h3>
+<div class="key-takeaway"><strong>What to pass:</strong></div>
+<ul>
+<li>Tiles from your weaker hand option</li>
+<li>Tiles you're 80% sure you won't need</li>
+</ul>
+<div class="key-takeaway"><strong>What to watch:</strong></div>
+<ul>
+<li>Are you getting your suit back? (Bad sign)</li>
+<li>Are you getting honors? (Others not using them)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Pass 3 (Left): Final Refinement</h3>
+<div class="key-takeaway"><strong>What to pass:</strong></div>
+<ul>
+<li>Last cleanup of unusable tiles</li>
+</ul>
+<div class="key-takeaway"><strong>What to keep:</strong></div>
+<ul>
+<li>Jokers (always)</li>
+<li>Tiles for your top 2 hands</li>
+<li>Bridge tiles</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>"Information Passing" vs. "Tile Dumping"</h3>
+<div class="key-takeaway"><strong>Tile dumping (beginner):</strong></div>
+<ul>
+<li>"I don't want this, pass it"</li>
+</ul>
+<div class="key-takeaway"><strong>Information passing (intermediate):</strong></div>
+<ul>
+<li>"If I pass this and get it back, I know it's abundant"</li>
+<li>"If I pass honors and get honors back, few are using them"</li>
+</ul>
+<div class="key-takeaway"><strong>You're gathering data, not just cleaning.</strong></div>
+<h3><span class="tile-icon">🀄</span>What Your Passes Reveal (To Others)</h3>
+<div class="key-takeaway"><strong>Passing lots of one suit = you're not using that suit</strong></div>
+<p>Example:</p>
+<ul>
+<li>You pass 3 Bams every round</li>
+<li>Smart opponents know: Don't discard Bams later (you won't call them)</li>
+</ul>
+<div class="key-takeaway"><strong>Strategic consideration:</strong> Mix your passes slightly to avoid being too readable.</div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-6-table-reading-101">
+<h2><span class="tile-icon">🀄</span>CHAPTER 6: TABLE READING 101</h2>
+<h3><span class="tile-icon">🀄</span>What Discards Tell You</h3>
+<div class="key-takeaway"><strong>Early discards (Turns 1-8):</strong></div>
+<ul>
+<li>Random cleanup</li>
+<li>Suits they're not using</li>
+<li>Isolated honors</li>
+</ul>
+<div class="key-takeaway"><strong>Mid-game discards (Turns 9-15):</strong></div>
+<ul>
+<li>More intentional</li>
+<li>Tiles that don't fit their hand</li>
+<li>Defensive throws (if someone exposed)</li>
+</ul>
+<div class="key-takeaway"><strong>Late-game discards (Turns 16+):</strong></div>
+<ul>
+<li>Highly defensive</li>
+<li>"Safe" tiles (already thrown)</li>
+<li>Desperation (breaking their hand to avoid feeding)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Identifying Likely Sections of the Card</h3>
+<div class="key-takeaway"><strong>Look at exposures:</strong></div>
+<div class="key-takeaway"><strong>Exposed: 3-3-3 Dots and 7-7-7 Dots</strong></div>
+<ul>
+<li>Likely: Like Numbers section (same number, different suits)</li>
+<li>Possible: Consecutive section with Dot runs</li>
+</ul>
+<div class="key-takeaway"><strong>Exposed: NNNN (4 Norths)</strong></div>
+<ul>
+<li>Likely: Winds &amp; Dragons section</li>
+</ul>
+<div class="key-takeaway"><strong>Exposed: 2-4-6-8 Craks</strong></div>
+<ul>
+<li>Likely: 2468 section</li>
+</ul>
+<div class="key-takeaway"><strong>Use exposures to narrow down their hand range.</strong></div>
+<h3><span class="tile-icon">🀄</span>Spotting Who Is Close</h3>
+<div class="key-takeaway"><strong>Danger signs:</strong></div>
+<ul>
+<li>2+ exposures showing</li>
+<li>Calling tiles quickly</li>
+<li>Discarding "safe" tiles only</li>
+<li>Looking confident (body language)</li>
+<li>Has jokers exposed</li>
+</ul>
+<div class="key-takeaway"><strong>When you spot danger, adjust your discards.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-7-timing-when-to-pivot-vs-when-to-commit">
+<h2><span class="tile-icon">🀄</span>CHAPTER 7: TIMING - WHEN TO PIVOT VS. WHEN TO COMMIT</h2>
+<h3><span class="tile-icon">🀄</span>The 3 Pivot Triggers</h3>
+<div class="key-takeaway"><strong>1. No Progress After 12 Draws</strong></div>
+<ul>
+<li>You're not getting closer</li>
+<li>Your tiles aren't coming</li>
+<li>Time to switch</li>
+</ul>
+<div class="key-takeaway"><strong>2. Your Tiles Are Being Discarded</strong></div>
+<ul>
+<li>Multiple players throwing your suit</li>
+<li>Sign: it's dead</li>
+<li>Find another path</li>
+</ul>
+<div class="key-takeaway"><strong>3. Two Players Exposed in Your Territory</strong></div>
+<ul>
+<li>They've claimed your tiles</li>
+<li>You're now fighting for scraps</li>
+<li>Pivot to different tiles</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>The "Last Responsible Moment" Rule</h3>
+<div class="key-takeaway"><strong>Commit as late as possible, but not too late.</strong></div>
+<div class="key-takeaway"><strong>Last responsible moment = when:</strong></div>
+<ul>
+<li>You have 2 complete melds</li>
+<li>You can see a clear path to finish</li>
+<li>Waiting longer doesn't help</li>
+</ul>
+<div class="key-takeaway"><strong>Too early:</strong> Turn 5 (not enough info)</div>
+<div class="key-takeaway"><strong>Too late:</strong> Turn 18 with nothing (should have pivoted by turn 12)</div>
+<div class="key-takeaway"><strong>Just right:</strong> Turn 10-14 (with clear progress)</div>
+<h3><span class="tile-icon">🀄</span>Avoiding the Sunk Cost Trap</h3>
+<div class="key-takeaway"><strong>Sunk cost fallacy:</strong></div>
+<p>"I've been building this hand for 15 turns, I can't give up now!"</p>
+<div class="key-takeaway"><strong>Reality:</strong></div>
+<p>Those 15 turns are GONE. They don't matter.</p>
+<div class="key-takeaway"><strong>What matters:</strong> Can you win from HERE?</div>
+<p>If no → Pivot</p>
+<p>If yes → Commit</p>
+<div class="key-takeaway"><strong>Don't throw good turns after bad.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-8-defend-stop-feeding-the-table">
+<h2><span class="tile-icon">🀄</span>CHAPTER 8: DEFEND - STOP FEEDING THE TABLE</h2>
+<h3><span class="tile-icon">🀄</span>Safe-ish Discards</h3>
+<div class="key-takeaway"><strong>No discard is 100% safe, but some are safer:</strong></div>
+<div class="key-takeaway"><strong>Safest:</strong></div>
+<ul>
+<li>Tiles already discarded 3+ times</li>
+<li>Tiles nobody has called</li>
+<li>Tiles outside exposed ranges</li>
+</ul>
+<div class="key-takeaway"><strong>Dangerous:</strong></div>
+<ul>
+<li>Tiles matching exposures</li>
+<li>Tiles in "hot" suits</li>
+<li>Tiles nobody has thrown (everyone might want them)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Danger Tiles</h3>
+<div class="key-takeaway"><strong>High-risk throws:</strong></div>
+<div class="key-takeaway"><strong>When someone exposed Bam runs:</strong></div>
+<ul>
+<li>Other Bams (they might need more)</li>
+</ul>
+<div class="key-takeaway"><strong>When someone exposed 5-5-5:</strong></div>
+<ul>
+<li>Other 5s in different suits (if playing Like Numbers)</li>
+</ul>
+<div class="key-takeaway"><strong>When someone exposed Dragons:</strong></div>
+<ul>
+<li>Other Dragons (might need more)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>How to Play When Someone Is Exposed and Hot</h3>
+<div class="key-takeaway"><strong>Defensive checklist:</strong></div>
+<ol>
+<li><strong>Stop discarding tiles in their range</strong></li>
+</ol>
+<ul>
+<li>If they exposed Craks, avoid Craks</li>
+</ul>
+<ol>
+<li><strong>Discard tiles already heavily thrown</strong></li>
+</ol>
+<ul>
+<li>Safe-ish choices</li>
+</ul>
+<ol>
+<li><strong>Slow down your own hand if needed</strong></li>
+</ol>
+<ul>
+<li>Better to finish second than donate a win</li>
+</ul>
+<ol>
+<li><strong>Watch for their final tile needs</strong></li>
+</ol>
+<ul>
+<li>If they need one more tile, don't be the one to throw it</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>The Defensive Discard Sequence</h3>
+<div class="key-takeaway"><strong>Safest to riskiest:</strong></div>
+<ol>
+<li>Tiles discarded 4+ times (nearly dead)</li>
+<li>Tiles discarded 2-3 times (probably not wanted)</li>
+<li>Honors nobody called (if not in Winds/Dragons hands)</li>
+<li>Edge tiles (1s, 9s) if no runs showing</li>
+<li>Middle tiles (4, 5, 6) ONLY if confident</li>
+</ol>
+<div class="key-takeaway"><strong>When in doubt, throw what's been thrown.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-9-endgame-decisions">
+<h2><span class="tile-icon">🀄</span>CHAPTER 9: ENDGAME DECISIONS</h2>
+<h3><span class="tile-icon">🀄</span>How to Finish a Hand</h3>
+<div class="key-takeaway"><strong>You're 2-3 tiles away. Now what?</strong></div>
+<div class="key-takeaway"><strong>Aggressive finish:</strong></div>
+<ul>
+<li>Expose remaining melds</li>
+<li>Use jokers</li>
+<li>Call any helpful tile</li>
+<li>Push tempo</li>
+</ul>
+<div class="key-takeaway"><strong>When to use:</strong> You're ahead, or table is slow</div>
+<div class="key-takeaway"><strong>Conservative finish:</strong></div>
+<ul>
+<li>Stay concealed</li>
+<li>Wait for perfect draws</li>
+<li>Don't expose unless critical</li>
+</ul>
+<div class="key-takeaway"><strong>When to use:</strong> Opponents are also close, or you're slightly behind</div>
+<h3><span class="tile-icon">🀄</span>When to Push</h3>
+<div class="key-takeaway"><strong>Push when:</strong></div>
+<ul>
+<li>You're closest to winning</li>
+<li>You have jokers</li>
+<li>Opponents are slower</li>
+<li>You can finish in 2-4 draws</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>When to Freeze and Survive</h3>
+<div class="key-takeaway"><strong>Freeze when:</strong></div>
+<ul>
+<li>Two players are exposed and racing</li>
+<li>You can't win</li>
+<li>Your goal is "don't donate a win"</li>
+</ul>
+<div class="key-takeaway"><strong>Freeze tactics:</strong></div>
+<ul>
+<li>Discard only safe tiles</li>
+<li>Break your own hand if needed</li>
+<li>Play for second place (or wall game)</li>
+</ul>
+<div class="key-takeaway"><strong>Sometimes the best move is NOT winning—it's NOT LOSING.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-10-dallas-mahjong-blanks-strategy-add-on">
+<h2><span class="tile-icon">🀄</span>CHAPTER 10: DALLAS MAHJONG / BLANKS STRATEGY ADD-ON</h2>
+<h3><span class="tile-icon">🀄</span>How Blanks Change Risk</h3>
+<div class="key-takeaway"><strong>With joker swapping:</strong></div>
+<ul>
+<li>Players can acquire jokers mid-game</li>
+<li>Hands speed up unpredictably</li>
+<li>"Safe" tiles become less safe</li>
+</ul>
+<div class="key-takeaway"><strong>Implication:</strong> Games are faster and more volatile.</div>
+<h3><span class="tile-icon">🀄</span>How to Defend When Blanks Exist</h3>
+<div class="key-takeaway"><strong>Standard defense assumes:</strong> Players keep the jokers they started with</div>
+<div class="key-takeaway"><strong>With blanks:</strong> Players can GET jokers from exposures</div>
+<div class="key-takeaway"><strong>Defense adjustment:</strong></div>
+<ul>
+<li>Assume anyone can suddenly speed up</li>
+<li>Don't rely on "they don't have jokers" logic</li>
+<li>Play slightly more aggressively (since others will too)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>When Blanks Create Fake Safety</h3>
+<div class="key-takeaway"><strong>Fake safety:</strong></div>
+<p>"They need 3 more tiles and have no jokers—I'm safe"</p>
+<div class="key-takeaway"><strong>Reality with blanks:</strong></div>
+<p>"They could swap a joker this turn and suddenly need only 1 tile"</p>
+<div class="key-takeaway"><strong>Adjustment:</strong> Stay cautious even when opponents seem far behind.</div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-11-intermediate-rules-of-thumb-30">
+<h2><span class="tile-icon">🀄</span>CHAPTER 11: INTERMEDIATE RULES OF THUMB (30+)</h2>
+<h3><span class="tile-icon">🀄</span>Hand Selection</h3>
+<ol>
+<li>Tile density beats hand beauty</li>
+<li>Jokers multiply your options—use them wisely</li>
+<li>Avoid hands requiring 4+ exact singles</li>
+<li>Trust your early draws</li>
+<li>If you can't name 2 viable hands post-Charleston, you're in trouble</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>Charleston</h3>
+<ol>
+<li>Never pass jokers</li>
+<li>Pass isolated tiles first, suits second, honors last</li>
+<li>Watch what comes back—it signals availability</li>
+<li>Keep bridge tiles that fit multiple hands</li>
+<li>Don't commit mentally until after Charleston</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>Exposures</h3>
+<ol>
+<li>One exposure = pressure; three exposures = transparency</li>
+<li>Expose rare tiles, not common ones</li>
+<li>Don't expose before turn 10 unless you're loaded</li>
+<li>If exposing locks you into needing exact singles, don't expose</li>
+<li>Concealed wins are often better wins</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>Jokers</h3>
+<ol>
+<li>Save jokers for pungs/kongs, not runs (when possible)</li>
+<li>Don't expose joker melds until you're 1-2 tiles from Mahjong</li>
+<li>With 4+ jokers, play aggressively</li>
+<li>With 0 jokers, play conservatively</li>
+<li>Joker swaps (blanks) are only worth it if they solve a real problem</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>Table Reading</h3>
+<ol>
+<li>Early discards = cleanup; late discards = defense</li>
+<li>Watch exposure patterns to guess card sections</li>
+<li>If two players throw the same tile back-to-back, it's probably dead</li>
+<li>Silence (no exposures) often means strong concealed hands</li>
+<li>Exposed players are easier to read</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>Timing</h3>
+<ol>
+<li>Pivot by turn 12 if you have no progress</li>
+<li>Commit when you have 2 complete melds</li>
+<li>The hand that's 70% built beats the hand that's 30% perfect</li>
+<li>Don't chase perfection; chase completion</li>
+<li>Wall games (no winner) often result from everyone waiting too long</li>
+</ol>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-12-practice-pack-10-scenarios">
+<h2><span class="tile-icon">🀄</span>CHAPTER 12: PRACTICE PACK - 10 SCENARIOS</h2>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Scenario 1: Early Decision</h3>
+<div class="key-takeaway"><strong>Your tiles (post-Charleston):</strong></div>
+<ul>
+<li>2-2-2-3-4-5-6-6 Bams</li>
+<li>Red Dragon, Red Dragon</li>
+<li>1 Crak</li>
+<li>Joker, Joker</li>
+</ul>
+<div class="key-takeaway"><strong>Card hands available:</strong></div>
+<ul>
+<li>Hand A: 222 333 444 DDDD (Pungs + Dragons)</li>
+<li>Hand B: 2345 6789 (Bam runs)</li>
+</ul>
+<div class="key-takeaway"><strong>Question:</strong> Which hand do you choose, and why?</div>
+<div class="key-takeaway"><strong>Answer:</strong> Hand B (Bam runs). You have high Bam density and a natural run started (2-3-4-5-6). Hand A requires you to build pungs of 3s and 4s from scratch. Hand B leverages your current tiles.</div>
+<hr class="divider" />
+</div>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Scenario 2: Exposure Decision</h3>
+<div class="key-takeaway"><strong>Your hand:</strong></div>
+<ul>
+<li>7-7-7 Dots (concealed)</li>
+<li>5-6-Joker-8 Craks (concealed run)</li>
+<li>9-9 Bams</li>
+<li>3 Crak, North, South</li>
+</ul>
+<div class="key-takeaway"><strong>Opponent discards:</strong> 7 Dots</div>
+<div class="key-takeaway"><strong>Question:</strong> Do you call and expose the pung of 7 Dots? Why or why not?</div>
+<div class="key-takeaway"><strong>Answer:</strong> NO. You're not close to winning (still need multiple tiles), and exposing now reveals you're on Dots/Craks without meaningful progress. Stay concealed and keep building.</div>
+<hr class="divider" />
+</div>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Scenario 3: Pivot or Commit?</h3>
+<div class="key-takeaway"><strong>Turn 14. Your hand:</strong></div>
+<ul>
+<li>1-1 Bams, 4-4 Bams, 7 Bams (scattered)</li>
+<li>2-2 Craks</li>
+<li>North, South, West</li>
+<li>Joker</li>
+</ul>
+<div class="key-takeaway"><strong>Discards show:</strong> Bams have been heavily thrown (8+ Bam tiles discarded)</div>
+<div class="key-takeaway"><strong>Question:</strong> Pivot or stay the course?</div>
+<div class="key-takeaway"><strong>Answer:</strong> PIVOT. Bams are dead (heavily discarded). Your tiles are scattered with no complete melds. Look for a hand using Craks or Winds instead.</div>
+<hr class="divider" />
+</div>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Scenario 4: Defensive Discard</h3>
+<div class="key-takeaway"><strong>Table situation:</strong></div>
+<ul>
+<li>Opponent exposed: <strong>4-4-4 Craks</strong> and <strong>EEEE (Easts)</strong></li>
+<li>They look close</li>
+</ul>
+<div class="key-takeaway"><strong>Your hand includes:</strong> 4 Dots, 5 Craks, 8 Bams, White Dragon</div>
+<div class="key-takeaway"><strong>Question:</strong> Which tile do you discard, and why?</div>
+<div class="key-takeaway"><strong>Answer:</strong> 8 Bams. It doesn't match their exposures (Craks and Easts). 5 Craks is DANGEROUS (they might need more Craks for runs). 4 Dots could be risky if they're on Like Numbers (4s). White Dragon could be risky if they need Dragons. 8 Bams is safest.</div>
+<hr class="divider" />
+</div>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Scenario 5: Joker Usage</h3>
+<div class="key-takeaway"><strong>Your hand:</strong></div>
+<ul>
+<li>3-3-3 Dots (real tiles)</li>
+<li>6-6-Joker Craks (pung with joker)</li>
+<li>2-2-2 Bams (real tiles)</li>
+<li>Need: 1 more pung to finish</li>
+</ul>
+<div class="key-takeaway"><strong>Question:</strong> When do you expose the joker meld (6-6-Joker)?</div>
+<div class="key-takeaway"><strong>Answer:</strong> LAST. Expose the real-tile pungs first (3-3-3 and 2-2-2). Only expose the joker meld when you're 1 tile from Mahjong. This prevents opponents from swapping your joker (in Dallas rules) and keeps your flexibility.</div>
+<hr class="divider" />
+</div>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Scenario 6: Charleston Intelligence</h3>
+<div class="key-takeaway"><strong>Pass 1 (Right):</strong> You passed 3 Craks</div>
+<div class="key-takeaway"><strong>You received:</strong> 3 Craks back</div>
+<div class="key-takeaway"><strong>Question:</strong> What does this tell you?</div>
+<div class="key-takeaway"><strong>Answer:</strong> Craks are abundant / not being used by the player on your left. This is a POSITIVE signal—Craks may be available later in the game. Consider Crak-based hands.</div>
+<hr class="divider" />
+</div>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Scenario 7: Reading Exposures</h3>
+<div class="key-takeaway"><strong>Opponent exposed:</strong></div>
+<ul>
+<li><strong>2-2-2-2 (Kongs of 2s, any suits)</strong></li>
+<li><strong>6-6-6-6 (Kongs of 6s, any suits)</strong></li>
+</ul>
+<div class="key-takeaway"><strong>Question:</strong> What section are they likely playing?</div>
+<div class="key-takeaway"><strong>Answer:</strong> Even Numbers or Like Numbers section. They're collecting the same numbers across different suits. Avoid discarding 2s and 6s in any suit.</div>
+<hr class="divider" />
+</div>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Scenario 8: Late-Game Push or Defend?</h3>
+<div class="key-takeaway"><strong>Turn 20. Your hand:</strong></div>
+<ul>
+<li>Exposed: 5-5-5 Bams</li>
+<li>Concealed: 8-8-8 Dots, 2-2 Craks, 9 Crak, North, Joker</li>
+<li>Need: 2 Craks or North to complete hand</li>
+</ul>
+<div class="key-takeaway"><strong>Opponent 1:</strong> Exposed 3 melds, looks 1 tile away</div>
+<div class="key-takeaway"><strong>Opponent 2:</strong> Concealed, no info</div>
+<div class="key-takeaway"><strong>Question:</strong> Push aggressively or play defense?</div>
+<div class="key-takeaway"><strong>Answer:</strong> DEFEND. Opponent 1 is likely closer than you (3 exposures vs. your 1). Play safe tiles—avoid Craks and Norths if possible. Breaking your hand slightly to avoid feeding a win is worth it. Finish second, don't donate first.</div>
+<hr class="divider" />
+</div>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Scenario 9: Blanks Strategy</h3>
+<div class="key-takeaway"><strong>Dallas Mahjong. Opponent exposed:</strong></div>
+<ul>
+<li><strong>7-7-Joker Bams</strong></li>
+</ul>
+<div class="key-takeaway"><strong>You have:</strong> 7 Bams (the real tile)</div>
+<div class="key-takeaway"><strong>Your hand status:</strong> You need the joker to complete a critical pung elsewhere</div>
+<div class="key-takeaway"><strong>Question:</strong> Do you swap? When?</div>
+<div class="key-takeaway"><strong>Answer:</strong> YES, but ONLY on your turn, right after drawing and before discarding. Give them your 7 Bams, take the joker, then discard. Make sure swapping doesn't break your hand structure. Only swap if the joker genuinely solves a problem.</div>
+<hr class="divider" />
+</div>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Scenario 10: Hand Selection Under Pressure</h3>
+<div class="key-takeaway"><strong>Post-Charleston:</strong></div>
+<ul>
+<li>5-6-7-8-9 Craks (strong run)</li>
+<li>Red Dragon, Red Dragon, Red Dragon</li>
+<li>1-1 Bams</li>
+<li>Joker, Joker</li>
+</ul>
+<div class="key-takeaway"><strong>Available hands:</strong></div>
+<ul>
+<li>Hand A: 56789 + DDDD (Run + Dragons)</li>
+<li>Hand B: 111 222 333 DDDD (Pungs + Dragons)</li>
+</ul>
+<div class="key-takeaway"><strong>Table:</strong> Two players already exposed Bams</div>
+<div class="key-takeaway"><strong>Question:</strong> Which hand?</div>
+<div class="key-takeaway"><strong>Answer:</strong> Hand A. You have the run nearly complete (5-6-7-8-9 Craks) and a dragon pung ready (Red-Red-Red). Hand B requires you to build pungs of 1s, 2s, 3s from scratch, and Bams are already being fought over. Leverage your current strength.</div>
+<hr class="divider" />
+</div>
+</section>
+<section class="chapter" id="self-scoring-rubric">
+<h2><span class="tile-icon">🀄</span>SELF-SCORING RUBRIC</h2>
+<p>For each scenario:</p>
+<ul>
+<li><strong>3 points:</strong> Correct answer + strong reasoning</li>
+<li><strong>2 points:</strong> Correct answer, weak reasoning</li>
+<li><strong>1 point:</strong> Incorrect answer, but logical thinking</li>
+<li><strong>0 points:</strong> Incorrect + poor reasoning</li>
+</ul>
+<div class="key-takeaway"><strong>Scoring Guide:</strong></div>
+<ul>
+<li><strong>24-30 points:</strong> Intermediate mastery—ready for Mahjong 301</li>
+<li><strong>18-23 points:</strong> Solid intermediate—keep practicing</li>
+<li><strong>12-17 points:</strong> Review weak areas, play more games</li>
+<li><strong>Below 12:</strong> Re-read key chapters, focus on fundamentals</li>
+</ul>
+<hr class="divider" />
+</section>
+<section class="chapter" id="whats-next">
+<h2><span class="tile-icon">🀄</span>WHAT'S NEXT?</h2>
+<p>You now have a complete intermediate system:</p>
+<ul>
+<li>SCAN → SHAPE → COMMIT → DEFEND</li>
+<li>Hand selection based on probability</li>
+<li>Exposure timing</li>
+<li>Defensive awareness</li>
+<li>Table reading skills</li>
+</ul>
+<div class="key-takeaway"><strong>To improve further:</strong></div>
+<ol>
+<li>Play 20-30 games using this framework</li>
+<li>Track your decisions (journal)</li>
+<li>Review scenarios regularly</li>
+<li>Practice pivoting when needed</li>
+</ol>
+<hr class="divider" />
+</section>
+<section class="chapter" id="ready-for-advanced-play">
+<h2><span class="tile-icon">🀄</span>READY FOR ADVANCED PLAY?</h2>
+<p>Once you're consistently winning 30-40% of your games (well above the 25% average), you're ready for advanced strategy.</p>
+<h3><span class="tile-icon">🀄</span>👉 <strong>Get Mahjong 301: Advanced Strategy Guide</strong></h3>
+<p>Master reads, pressure, and defense at the highest level with the RANGE-BAIT-BLOCK-CLOSE system.</p>
+<div class="key-takeaway"><strong>What you'll master:</strong></div>
+<ul>
+<li>Opponent profiling &amp; exploitation</li>
+<li>Range-based hand reading</li>
+<li>Defensive play that wins games</li>
+<li>Baiting &amp; information warfare</li>
+<li>Tempo control</li>
+<li>50+ advanced rules of thumb</li>
+<li>20 drill scenarios</li>
+</ul>
+<div class="key-takeaway"><strong>Visit MahjongMastery.com to level up!</strong></div>
+<hr class="divider" />
+<div class="key-takeaway"><strong>Happy Playing!</strong></div>
+<p>© 2026 MahjongMastery • www.MahjongMastery.com</p>
+</section>
+
+  </section>
+
+  <footer class="footer">© 2026 MahjongMastery • www.MahjongMastery.com • Page <span class="page-number"></span></footer>
+</body>
+</html>

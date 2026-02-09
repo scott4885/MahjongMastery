@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WINNING QUICK | Mahjong Mastery</title>
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --rose: #D4A5A5;
+    --sage: #A8B5A0;
+    --ink: #2f2f2f;
+    --accent: #7b5b5b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+  }
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 64px 64px 96px;
+    background: var(--cream);
+  }
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(160deg, #FAF7F2 0%, #F5ECE8 55%, #E9D8D6 100%);
+    border-bottom: 8px solid var(--sage);
+  }
+  .cover .title {
+    font-size: 52px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .cover .subtitle {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+  .cover .tagline {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  .cover .author {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--sage);
+  }
+  .cover .price {
+    margin-top: 12px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--accent);
+  }
+  .tile-art {
+    display: flex;
+    gap: 24px;
+    margin: 32px 0;
+  }
+  .tile-svg {
+    width: 70px;
+    height: 90px;
+    border-radius: 10px;
+    background: #fff;
+    border: 2px solid var(--sage);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    padding: 8px;
+  }
+  h1, h2, h3, h4 {
+    font-family: "Palatino Linotype", "Book Antiqua", serif;
+    color: #3b2f2f;
+  }
+  h2 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--rose);
+  }
+  h3 {
+    font-size: 20px;
+    margin-top: 24px;
+  }
+  .tile-icon { margin-right: 8px; }
+  .divider {
+    border: none;
+    border-top: 2px solid var(--sage);
+    margin: 24px 0;
+  }
+  .toc {
+    margin: 24px 0 48px;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid var(--rose);
+    border-radius: 12px;
+  }
+  .toc h2 { margin-top: 0; }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  ul, ol { padding-left: 24px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  th { background: #f2ece8; }
+  .table-wrap { margin: 16px 0; overflow-x: auto; }
+
+  .key-takeaway {
+    background: #f8e9e9;
+    border-left: 4px solid var(--rose);
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-style: italic;
+  }
+  .practice-box {
+    border: 2px solid var(--sage);
+    background: #fff;
+    padding: 16px 18px;
+    margin: 18px 0;
+    border-radius: 10px;
+  }
+
+  footer.footer {
+    position: fixed;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+  }
+  .page-number:before { content: counter(page); }
+
+  @media print {
+    body { background: #fff; color: #000; }
+    .page { background: #fff; padding: 32px; }
+    .cover { background: #fff; border: none; }
+    .tile-art, .tile-svg { display: none !important; }
+    a { color: #000; text-decoration: none; }
+    .chapter { break-before: page; }
+    .chapter:first-of-type { break-before: auto; }
+    .toc { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+  <section class="cover page">
+    <div class="tile-art">
+      <div class="tile-svg">
+<svg viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="8" width="64" height="94" rx="8" fill="#fefdfb" stroke="#A8B5A0" stroke-width="2"/>
+  <rect x="24" y="18" width="10" height="70" rx="4" fill="#A8B5A0"/>
+  <rect x="46" y="18" width="10" height="70" rx="4" fill="#A8B5A0"/>
+  <circle cx="29" cy="40" r="3" fill="#D4A5A5"/>
+  <circle cx="51" cy="60" r="3" fill="#D4A5A5"/>
+</svg></div>
+      <div class="tile-svg">
+<svg viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="8" width="64" height="94" rx="8" fill="#fefdfb" stroke="#D4A5A5" stroke-width="2"/>
+  <circle cx="40" cy="48" r="10" fill="#D4A5A5"/>
+  <circle cx="30" cy="40" r="8" fill="#F2D0D0"/>
+  <circle cx="50" cy="40" r="8" fill="#F2D0D0"/>
+  <circle cx="30" cy="56" r="8" fill="#F2D0D0"/>
+  <circle cx="50" cy="56" r="8" fill="#F2D0D0"/>
+  <rect x="37" y="60" width="6" height="24" fill="#A8B5A0"/>
+</svg></div>
+      <div class="tile-svg">
+<svg viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="8" width="64" height="94" rx="8" fill="#fefdfb" stroke="#A8B5A0" stroke-width="2"/>
+  <path d="M24 70 C34 50, 50 50, 58 68" fill="none" stroke="#A8B5A0" stroke-width="4"/>
+  <circle cx="34" cy="54" r="6" fill="#D4A5A5"/>
+  <circle cx="48" cy="54" r="6" fill="#D4A5A5"/>
+  <circle cx="30" cy="54" r="2" fill="#3b2f2f"/>
+</svg></div>
+    </div>
+    <div class="title">WINNING QUICK</div>
+    <div class="subtitle">Beginner Mahjong Strategy That Gets You More Wins Faster</div>
+    <div class="tagline">(American Mahjong + Dallas/Blanks Friendly)</div>
+    <div class="author">By Mahjong Mastery</div>
+    <div class="price">$27</div>
+  </section>
+
+  <section class="page">
+    <div class="toc">
+      <h2>Table of Contents</h2>
+      <ul><li><a href="#welcome">WELCOME!</a></li>
+<li><a href="#chapter-1-the-winning-quick-mindset">CHAPTER 1: THE "WINNING QUICK" MINDSET</a></li>
+<li><a href="#chapter-2-the-1-rule-pick-hands-you-can-actually-finish">CHAPTER 2: THE #1 RULE - PICK HANDS YOU CAN ACTUALLY FINISH</a></li>
+<li><a href="#chapter-3-the-beginner-framework-fast">CHAPTER 3: THE BEGINNER FRAMEWORK - FAST</a></li>
+<li><a href="#chapter-4-charleston-winning-quick-strategy">CHAPTER 4: CHARLESTON "WINNING QUICK" STRATEGY</a></li>
+<li><a href="#chapter-5-exposure-strategy-for-beginners">CHAPTER 5: EXPOSURE STRATEGY FOR BEGINNERS</a></li>
+<li><a href="#chapter-6-joker-rules-that-help-you-win-quick">CHAPTER 6: JOKER RULES THAT HELP YOU WIN QUICK</a></li>
+<li><a href="#chapter-7-how-to-know-youre-on-the-wrong-hand">CHAPTER 7: HOW TO KNOW YOU'RE ON THE WRONG HAND</a></li>
+<li><a href="#chapter-8-the-win-more-by-losing-less-defense-for-beginners">CHAPTER 8: THE "WIN MORE BY LOSING LESS" DEFENSE FOR BEGINNERS</a></li>
+<li><a href="#chapter-9-beginner-winning-quick-hand-types">CHAPTER 9: BEGINNER "WINNING QUICK" HAND TYPES</a></li>
+<li><a href="#chapter-10-the-turn-by-turn-quick-checklist">CHAPTER 10: THE TURN-BY-TURN QUICK CHECKLIST</a></li>
+<li><a href="#chapter-11-dallas-mahjong-blanks-winning-quick-add-on">CHAPTER 11: DALLAS MAHJONG / BLANKS "WINNING QUICK" ADD-ON</a></li>
+<li><a href="#chapter-12-quick-wins-practice-plan-7-days">CHAPTER 12: QUICK WINS PRACTICE PLAN (7 DAYS)</a></li>
+<li><a href="#chapter-13-common-beginner-mistakes-and-the-fix">CHAPTER 13: COMMON BEGINNER MISTAKES (AND THE FIX)</a></li>
+<li><a href="#chapter-14-bonus-pages">CHAPTER 14: BONUS PAGES</a></li>
+<li><a href="#chapter-15-your-winning-quick-action-plan">CHAPTER 15: YOUR WINNING QUICK ACTION PLAN</a></li>
+<li><a href="#final-thoughts">FINAL THOUGHTS</a></li>
+<li><a href="#ready-to-level-up">READY TO LEVEL UP?</a></li>
+<li><a href="#printable-quick-reference">PRINTABLE QUICK REFERENCE</a></li></ul>
+    </div>
+    <hr class="divider" />
+<section class="chapter" id="welcome">
+<h2><span class="tile-icon">🀄</span>WELCOME!</h2>
+<p>You've learned the rules. You've played a few games. But you're frustrated because:</p>
+<ul>
+<li>You keep losing to more experienced players</li>
+<li>Your hands never seem to come together</li>
+<li>You're not sure what you're doing wrong</li>
+<li>Winning feels random and impossible</li>
+</ul>
+<div class="key-takeaway"><strong>This guide changes that.</strong></div>
+<p>You're about to learn the simple, repeatable strategies that will get you MORE WINS FASTER—without overwhelming complexity or years of experience.</p>
+<div class="key-takeaway"><strong>What You'll Learn:</strong></div>
+<ul>
+<li>The "Winning Quick" mindset</li>
+<li>How to pick hands you can actually finish</li>
+<li>The FAST decision framework</li>
+<li>Charleston strategy for beginners</li>
+<li>When to expose (and when not to)</li>
+<li>Joker discipline</li>
+<li>Simple defense to stop feeding wins</li>
+<li>Dallas Mahjong (blanks) adjustments</li>
+</ul>
+<div class="key-takeaway"><strong>These strategies work. They're proven. And they're designed specifically for beginners.</strong></div>
+<p>Let's get you winning.</p>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-1-the-winning-quick-mindset">
+<h2><span class="tile-icon">🀄</span>CHAPTER 1: THE "WINNING QUICK" MINDSET</h2>
+<h3><span class="tile-icon">🀄</span>Your Goal Is NOT to Play Perfect Mahjong</h3>
+<div class="key-takeaway"><strong>Forget about:</strong></div>
+<ul>
+<li>Being the best player at the table</li>
+<li>Playing the "coolest" hands</li>
+<li>Impressing others with your skill</li>
+</ul>
+<div class="key-takeaway"><strong>Focus on:</strong></div>
+<ul>
+<li>Finishing hands consistently</li>
+<li>Avoiding dead ends</li>
+<li>Making steady progress</li>
+<li>Not feeding wins to others</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Beginners Win By Being:</h3>
+<div class="key-takeaway"><strong>1. SIMPLE</strong></div>
+<p>Choose easy hands, not complicated ones.</p>
+<div class="key-takeaway"><strong>2. FLEXIBLE</strong></div>
+<p>Keep options alive, don't lock in too early.</p>
+<div class="key-takeaway"><strong>3. FAST ENOUGH</strong></div>
+<p>Make decisions quickly, don't overthink.</p>
+<div class="key-takeaway"><strong>4. NOT FEEDING WINS</strong></div>
+<p>Stop donating Mahjongs to opponents.</p>
+<div class="key-takeaway"><strong>Winning Quick = finishing before others, with hands you can actually complete.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-2-the-1-rule-pick-hands-you-can-actually-finish">
+<h2><span class="tile-icon">🀄</span>CHAPTER 2: THE #1 RULE - PICK HANDS YOU CAN ACTUALLY FINISH</h2>
+<h3><span class="tile-icon">🀄</span>Beginner "Winning Hands" Criteria</h3>
+<div class="key-takeaway"><strong>Choose hands that:</strong></div>
+<p>✅ <strong>Use 1 suit + honors</strong> (easier to focus)</p>
+<ul>
+<li>Example: All Bams + Dragons</li>
+</ul>
+<p>✅ <strong>Have built-in pairs</strong> (less hunting)</p>
+<ul>
+<li>Pairs are easier to complete than singles</li>
+</ul>
+<p>✅ <strong>Don't require too many exact singles</strong></p>
+<ul>
+<li>Singles are HARD—avoid hands with 5+ singles</li>
+</ul>
+<p>✅ <strong>Don't force you to keep 10 different tiles alive</strong></p>
+<ul>
+<li>Simpler = better</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Avoid Early As a Beginner</h3>
+<p>❌ <strong>Hands with too many singletons</strong></p>
+<ul>
+<li>Example: 1-2-3-4-5-6-7-8-9 (all different, very hard)</li>
+</ul>
+<p>❌ <strong>Hands that require 4 exact tiles you haven't seen</strong></p>
+<ul>
+<li>If you need four 9s and nobody's thrown any, BAD SIGN</li>
+</ul>
+<p>❌ <strong>Hands that need you to be perfect in Charleston</strong></p>
+<ul>
+<li>You're a beginner—Charleston is chaotic. Pick forgiving hands.</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>The Simple Truth</h3>
+<div class="key-takeaway"><strong>Easy hands completed = WINS</strong></div>
+<div class="key-takeaway"><strong>Hard hands attempted = LOSSES</strong></div>
+<div class="key-takeaway"><strong>Pick the easy one.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-3-the-beginner-framework-fast">
+<h2><span class="tile-icon">🀄</span>CHAPTER 3: THE BEGINNER FRAMEWORK - FAST</h2>
+<div class="key-takeaway"><strong>F - Find the easiest hand</strong></div>
+<div class="key-takeaway"><strong>A - Avoid dead tiles</strong></div>
+<div class="key-takeaway"><strong>S - Stay flexible</strong></div>
+<div class="key-takeaway"><strong>T - Take progress</strong></div>
+<h3><span class="tile-icon">🀄</span>F - FIND THE EASIEST HAND</h3>
+<div class="key-takeaway"><strong>After Charleston, ask:</strong></div>
+<ul>
+<li>What suit do I have the most of?</li>
+<li>Do I have pairs already?</li>
+<li>Which card hand matches my tiles RIGHT NOW?</li>
+</ul>
+<div class="key-takeaway"><strong>Choose the hand that fits your current tiles, not the "prettiest" hand.</strong></div>
+<h3><span class="tile-icon">🀄</span>A - AVOID DEAD TILES</h3>
+<div class="key-takeaway"><strong>Dead tiles = tiles that aren't helping you win</strong></div>
+<div class="key-takeaway"><strong>Don't chase tiles you haven't seen in forever.</strong></div>
+<p>If the table is discarding your suit aggressively:</p>
+<ul>
+<li>Bams are getting thrown everywhere?</li>
+<li><strong>PIVOT.</strong> Bams are dead. Choose a different suit.</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>S - STAY FLEXIBLE</h3>
+<div class="key-takeaway"><strong>Keep 2 possible hands alive early.</strong></div>
+<p>Don't lock in too soon unless you're loaded (have most of the tiles already).</p>
+<div class="key-takeaway"><strong>Example:</strong></div>
+<ul>
+<li>Hand A: 111 222 333 (Ones, Twos, Threes)</li>
+<li>Hand B: 1111 2222 (Kongs of Ones and Twos)</li>
+</ul>
+<p>If you have lots of 1s and 2s, stay flexible between both hands until one becomes clearly easier.</p>
+<h3><span class="tile-icon">🀄</span>T - TAKE PROGRESS</h3>
+<div class="key-takeaway"><strong>When you can expose safely AND it helps you finish, DO IT.</strong></div>
+<p>Your goal is <strong>momentum</strong>, not perfection.</p>
+<div class="key-takeaway"><strong>Expose when:</strong></div>
+<ul>
+<li>It creates immediate progress</li>
+<li>You're close to finishing</li>
+<li>You have backup tiles (jokers)</li>
+</ul>
+<div class="key-takeaway"><strong>Don't expose when:</strong></div>
+<ul>
+<li>You're still unsure of your hand</li>
+<li>You're far from finishing</li>
+<li>It locks you into needing exact tiles later</li>
+</ul>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-4-charleston-winning-quick-strategy">
+<h2><span class="tile-icon">🀄</span>CHAPTER 4: CHARLESTON "WINNING QUICK" STRATEGY</h2>
+<h3><span class="tile-icon">🀄</span>Your Job in Charleston</h3>
+<div class="key-takeaway"><strong>Get:</strong></div>
+<ul>
+<li>A cleaner suit</li>
+<li>Fewer random honors</li>
+<li>More pairs</li>
+</ul>
+<div class="key-takeaway"><strong>That's it. Simple.</strong></div>
+<h3><span class="tile-icon">🀄</span>Beginner Passing Rules</h3>
+<div class="key-takeaway"><strong>PASS:</strong></div>
+<ul>
+<li>Isolated tiles you don't want (off-suit)</li>
+<li>"Confusing tiles" that don't fit your best 1-2 hands</li>
+<li>Tiles from suits you're not using</li>
+</ul>
+<div class="key-takeaway"><strong>KEEP:</strong></div>
+<ul>
+<li>Pairs (you have 2 of them)</li>
+<li>Jokers (ALWAYS keep jokers)</li>
+<li>Tiles that complete sets (pungs, runs)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Don't Overthink</h3>
+<div class="key-takeaway"><strong>Charleston is about improving your odds, not predicting the whole game.</strong></div>
+<p>You're not a mind reader. Just clean up your hand and hope for helpful returns.</p>
+<div class="key-takeaway"><strong>Three passes (Right, Across, Left), stay calm, move on.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-5-exposure-strategy-for-beginners">
+<h2><span class="tile-icon">🀄</span>CHAPTER 5: EXPOSURE STRATEGY FOR BEGINNERS</h2>
+<h3><span class="tile-icon">🀄</span>Expose When It Does 2 Things:</h3>
+<ol>
+<li><strong>Creates immediate progress</strong> (completes a meld)</li>
+<li><strong>Doesn't destroy your flexibility</strong> (you can still finish)</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>Beginner "Green Light" Exposures</h3>
+<div class="key-takeaway"><strong>Expose when:</strong></div>
+<p>✅ You already have most of the hand built</p>
+<ul>
+<li>Example: 3 melds done, need 1 more</li>
+</ul>
+<p>✅ You have a joker or two supporting the plan</p>
+<ul>
+<li>Jokers = safety net</li>
+</ul>
+<p>✅ You're exposing a set that's hard to break later</p>
+<ul>
+<li>Rare tiles, kongs, etc.</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Beginner "Red Light" Exposures</h3>
+<div class="key-takeaway"><strong>DON'T expose when:</strong></div>
+<p>❌ Exposing too early with no backup plan</p>
+<ul>
+<li>Example: Turn 5, only 1 meld complete</li>
+</ul>
+<p>❌ Exposing a hand that needs multiple exact singles later</p>
+<ul>
+<li>You'll be stuck waiting for perfect draws</li>
+</ul>
+<p>❌ Exposing when you're still unsure of your suit</p>
+<ul>
+<li>Wait until you're committed</li>
+</ul>
+<div class="key-takeaway"><strong>When in doubt, WAIT.</strong></div>
+<p>Exposing too early is one of the top beginner mistakes.</p>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-6-joker-rules-that-help-you-win-quick">
+<h2><span class="tile-icon">🀄</span>CHAPTER 6: JOKER RULES THAT HELP YOU WIN QUICK</h2>
+<h3><span class="tile-icon">🀄</span>Jokers Are Gas. Don't Waste Them.</h3>
+<div class="key-takeaway"><strong>Jokers = flexibility and speed.</strong></div>
+<p>Without jokers, hands are harder. WITH jokers, hands finish faster.</p>
+<h3><span class="tile-icon">🀄</span>Build Around Jokers, Don't Depend on Miracles</h3>
+<div class="key-takeaway"><strong>Good use:</strong></div>
+<ul>
+<li>Using jokers to complete pungs/kongs you're close to finishing</li>
+</ul>
+<div class="key-takeaway"><strong>Bad use:</strong></div>
+<ul>
+<li>Holding jokers for a hand you're nowhere near completing</li>
+</ul>
+<div class="key-takeaway"><strong>Jokers help you finish sets, but you still need structure.</strong></div>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Beginner Joker Best Practices</h3>
+<div class="key-takeaway"><strong>1. Keep jokers through the Charleston</strong></div>
+<p>NEVER pass jokers. EVER.</p>
+<div class="key-takeaway"><strong>2. Don't expose a hand that becomes "joker hostage"</strong></div>
+<p>If your hand ONLY works with jokers and you expose them early (Dallas rules), opponents can swap them and ruin your hand.</p>
+<div class="key-takeaway"><strong>3. If you have 2+ jokers, lean into a faster completion plan</strong></div>
+<p>More jokers = more aggressive strategy. Finish quickly.</p>
+<hr class="divider" />
+</div>
+</section>
+<section class="chapter" id="chapter-7-how-to-know-youre-on-the-wrong-hand">
+<h2><span class="tile-icon">🀄</span>CHAPTER 7: HOW TO KNOW YOU'RE ON THE WRONG HAND</h2>
+<div class="practice-box">
+  <h3>Practice Scenario: Pivot or Commit?</h3>
+  <p>Turn 13. You have one completed pung, but your needed tiles have been discarded 3+ times.</p>
+  <p><strong>Question:</strong> Do you pivot or commit?</p>
+  <p><strong>Answer:</strong> Pivot. If the table is burning your tiles, your hand is dying—switch to a simpler, more available hand.</p>
+</div>
+<h3><span class="tile-icon">🀄</span>Pivot Triggers (Change Hands)</h3>
+<div class="key-takeaway"><strong>Pivot if:</strong></div>
+<p>❌ You still have too many unmatched tiles after Charleston</p>
+<p>❌ You need 3-5 exact singles and you've seen NONE of them</p>
+<p>❌ Two players are exposed and moving fast (you're behind)</p>
+<p>❌ Your suit is getting burned in discards (everyone's throwing it)</p>
+<h3><span class="tile-icon">🀄</span>Beginner Pivot Rule</h3>
+<div class="key-takeaway"><strong>If you're not making visible progress by mid-game (turn 12-15), switch to the easier path.</strong></div>
+<p>Don't be stubborn. Dead hands stay dead.</p>
+<div class="key-takeaway"><strong>Flexibility wins games.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-8-the-win-more-by-losing-less-defense-for-beginners">
+<h2><span class="tile-icon">🀄</span>CHAPTER 8: THE "WIN MORE BY LOSING LESS" DEFENSE FOR BEGINNERS</h2>
+<h3><span class="tile-icon">🀄</span>Beginners Can Win More Games Just By Not Feeding Wins</h3>
+<div class="key-takeaway"><strong>Every time you donate a Mahjong:</strong></div>
+<ul>
+<li>You LOSE points</li>
+<li>They GAIN points</li>
+<li>Your win rate drops</li>
+</ul>
+<div class="key-takeaway"><strong>Stop feeding = More wins overall.</strong></div>
+<h3><span class="tile-icon">🀄</span>Beginner Defense Checklist</h3>
+<div class="key-takeaway"><strong>1. If someone is exposed with 2+ melds, assume DANGER</strong></div>
+<div class="key-takeaway"><strong>2. Don't throw tiles that match their exposure pattern</strong></div>
+<ul>
+<li>They exposed Bam runs? Don't throw Bams.</li>
+<li>They exposed 5-5-5? Don't throw other 5s (if Like Numbers).</li>
+</ul>
+<div class="key-takeaway"><strong>3. When in doubt, throw:</strong></div>
+<ul>
+<li>Tiles already heavily discarded (3+ times)</li>
+<li>Tiles that don't connect to what's showing</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Simple Rule</h3>
+<div class="key-takeaway"><strong>If someone looks close, play BORING.</strong></div>
+<p>Discard safe tiles. Don't try to be a hero.</p>
+<div class="key-takeaway"><strong>Second place is better than feeding a win.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-9-beginner-winning-quick-hand-types">
+<h2><span class="tile-icon">🀄</span>CHAPTER 9: BEGINNER "WINNING QUICK" HAND TYPES</h2>
+<h3><span class="tile-icon">🀄</span>3 Simple Starter Styles</h3>
+<div class="key-takeaway"><strong>1. One-Suit + Honors</strong></div>
+<ul>
+<li>Example: All Dots + Red Dragons</li>
+<li>Why it works: You're focused on one suit (easier to track)</li>
+</ul>
+<div class="key-takeaway"><strong>2. Pairs-Friendly Builds</strong></div>
+<ul>
+<li>Example: Hands with lots of pairs (less hunting for singles)</li>
+<li>Why it works: Pairs are common and easier to complete</li>
+</ul>
+<div class="key-takeaway"><strong>3. Hands That Can Survive Imperfect Charleston Results</strong></div>
+<ul>
+<li>Flexible hands that don't require perfect tiles</li>
+<li>Why it works: Beginners don't master Charleston instantly—choose forgiving hands</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>How to Identify These on the Card</h3>
+<div class="key-takeaway"><strong>Look for:</strong></div>
+<ul>
+<li>Hands labeled "Any suit" (flexible)</li>
+<li>Hands with lots of pairs</li>
+<li>Hands with pungs/kongs (not tons of singles)</li>
+</ul>
+<div class="key-takeaway"><strong>Avoid:</strong></div>
+<ul>
+<li>"Year" hands (too specific)</li>
+<li>Hands with 5+ singles</li>
+<li>Hands requiring rare tiles (flowers, specific winds in volume)</li>
+</ul>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-10-the-turn-by-turn-quick-checklist">
+<h2><span class="tile-icon">🀄</span>CHAPTER 10: THE TURN-BY-TURN QUICK CHECKLIST</h2>
+<h3><span class="tile-icon">🀄</span>Every Turn, Ask:</h3>
+<div class="key-takeaway"><strong>1. What is my easiest finish line right now?</strong></div>
+<ul>
+<li>Look at your tiles. What hand can you actually complete?</li>
+</ul>
+<div class="key-takeaway"><strong>2. Am I making progress or stalling?</strong></div>
+<ul>
+<li>Drawing helpful tiles? Keep going.</li>
+<li>Drawing junk? Consider pivoting.</li>
+</ul>
+<div class="key-takeaway"><strong>3. Who is exposed and dangerous?</strong></div>
+<ul>
+<li>Watch for exposed players. They're closer.</li>
+</ul>
+<div class="key-takeaway"><strong>4. What's the safest discard that doesn't hurt my plan?</strong></div>
+<ul>
+<li>Don't feed wins. Throw safe-ish tiles.</li>
+</ul>
+<div class="key-takeaway"><strong>Print this checklist and keep it at the table during your first 10 games.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-11-dallas-mahjong-blanks-winning-quick-add-on">
+<h2><span class="tile-icon">🀄</span>CHAPTER 11: DALLAS MAHJONG / BLANKS "WINNING QUICK" ADD-ON</h2>
+<h3><span class="tile-icon">🀄</span>How Blanks Change Beginner Strategy</h3>
+<div class="key-takeaway"><strong>Blanks (jokers) can be swapped in Dallas Mahjong.</strong></div>
+<div class="key-takeaway"><strong>Key changes:</strong></div>
+<div class="key-takeaway"><strong>1. Blanks speed up the game</strong></div>
+<ul>
+<li>Players can acquire jokers mid-game (via swaps)</li>
+<li>Hands finish faster than you expect</li>
+</ul>
+<div class="key-takeaway"><strong>2. Blanks increase surprise wins</strong></div>
+<ul>
+<li>Someone who looked far behind suddenly has jokers and wins</li>
+</ul>
+<div class="key-takeaway"><strong>3. Blanks make "safe discards" less safe</strong></div>
+<ul>
+<li>Assumptions about who's close become less reliable</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Beginner Blank Rules</h3>
+<div class="key-takeaway"><strong>1. Don't rely on perfect defense</strong></div>
+<ul>
+<li>Defense is harder with blanks (people speed up unpredictably)</li>
+</ul>
+<div class="key-takeaway"><strong>2. Prioritize finishing your hand sooner</strong></div>
+<ul>
+<li>Offense &gt; Defense when blanks exist</li>
+</ul>
+<div class="key-takeaway"><strong>3. Keep your structure tight so blanks help YOU, not only opponents</strong></div>
+<ul>
+<li>Build solid melds so if you GET a swapped joker, it's useful</li>
+</ul>
+<div class="key-takeaway"><strong>Blanks = faster, more volatile games. Adapt accordingly.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-12-quick-wins-practice-plan-7-days">
+<h2><span class="tile-icon">🀄</span>CHAPTER 12: QUICK WINS PRACTICE PLAN (7 DAYS)</h2>
+<h3><span class="tile-icon">🀄</span>Day 1: Choose Easier Hands Faster</h3>
+<div class="key-takeaway"><strong>Focus:</strong> After Charleston, pick the hand that matches your tiles in 30 seconds or less.</div>
+<div class="key-takeaway"><strong>Goal:</strong> Stop overthinking. Trust your instinct.</div>
+<h3><span class="tile-icon">🀄</span>Day 2: Charleston Passing Discipline</h3>
+<div class="key-takeaway"><strong>Focus:</strong> NEVER pass jokers. Pass isolated tiles first.</div>
+<div class="key-takeaway"><strong>Goal:</strong> Cleaner hands post-Charleston.</div>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Day 3: Exposure Timing Practice</h3>
+<div class="key-takeaway"><strong>Focus:</strong> Only expose when you're 3-4 tiles from winning.</div>
+<div class="key-takeaway"><strong>Goal:</strong> Stop exposing too early.</div>
+</div>
+<h3><span class="tile-icon">🀄</span>Day 4: Joker Discipline</h3>
+<div class="key-takeaway"><strong>Focus:</strong> Use jokers for pungs/kongs, not singles.</div>
+<div class="key-takeaway"><strong>Goal:</strong> Maximize joker value.</div>
+<div class="practice-box">
+<h3><span class="tile-icon">🀄</span>Day 5: Pivoting Practice</h3>
+<div class="key-takeaway"><strong>Focus:</strong> If no progress by turn 12, pivot.</div>
+<div class="key-takeaway"><strong>Goal:</strong> Flexibility, not stubbornness.</div>
+</div>
+<h3><span class="tile-icon">🀄</span>Day 6: Defense Basics</h3>
+<div class="key-takeaway"><strong>Focus:</strong> When someone is exposed, discard safe tiles only.</div>
+<div class="key-takeaway"><strong>Goal:</strong> Zero donated wins today.</div>
+<h3><span class="tile-icon">🀄</span>Day 7: Full Game with FAST Checklist</h3>
+<div class="key-takeaway"><strong>Focus:</strong> Use FAST framework every turn.</div>
+<div class="key-takeaway"><strong>Goal:</strong> Finish a hand using the system.</div>
+<div class="key-takeaway"><strong>Practice this plan for 1-2 weeks and watch your wins increase.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-13-common-beginner-mistakes-and-the-fix">
+<h2><span class="tile-icon">🀄</span>CHAPTER 13: COMMON BEGINNER MISTAKES (AND THE FIX)</h2>
+<h3><span class="tile-icon">🀄</span>Mistake #1: Chasing the "Coolest" Hand Instead of the Easiest</h3>
+<div class="key-takeaway"><strong>Fix:</strong> Beauty doesn't win games. Completion does. Pick the easiest hand.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #2: Holding Too Many Suits Too Long</h3>
+<div class="key-takeaway"><strong>Fix:</strong> Commit to 1-2 suits by turn 8-10. Drop the third suit.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #3: Exposing Too Early with No Plan</h3>
+<div class="key-takeaway"><strong>Fix:</strong> Wait until you're 3-4 tiles from Mahjong before exposing.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #4: Refusing to Pivot</h3>
+<div class="key-takeaway"><strong>Fix:</strong> If your hand is dead by turn 12, SWITCH. Don't be stubborn.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #5: Donating Wins by Discarding Into Exposures</h3>
+<div class="key-takeaway"><strong>Fix:</strong> Watch exposed players. Avoid their tiles.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #6: Using Jokers for Pairs</h3>
+<div class="key-takeaway"><strong>Fix:</strong> Jokers work in pungs, kongs, and runs—NOT pairs.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #7: Passing Jokers in Charleston</h3>
+<div class="key-takeaway"><strong>Fix:</strong> NEVER pass jokers. Not even once.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #8: Not Paying Attention to Discards</h3>
+<div class="key-takeaway"><strong>Fix:</strong> Watch what's being thrown. It tells you what's dead and what's wanted.</div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-14-bonus-pages">
+<h2><span class="tile-icon">🀄</span>CHAPTER 14: BONUS PAGES</h2>
+<h3><span class="tile-icon">🀄</span>"Winning Quick" Cheat Sheet (1 Page)</h3>
+<div class="key-takeaway"><strong>FAST Framework:</strong></div>
+<ul>
+<li><strong>F:</strong> Find easiest hand</li>
+<li><strong>A:</strong> Avoid dead tiles</li>
+<li><strong>S:</strong> Stay flexible</li>
+<li><strong>T:</strong> Take progress</li>
+</ul>
+<div class="key-takeaway"><strong>Charleston:</strong></div>
+<ul>
+<li>Keep: Jokers, pairs, pungs</li>
+<li>Pass: Isolated tiles, off-suit tiles</li>
+</ul>
+<div class="key-takeaway"><strong>Exposure:</strong></div>
+<ul>
+<li>Green light: Close to winning, have jokers</li>
+<li>Red light: Early game, unsure hand</li>
+</ul>
+<div class="key-takeaway"><strong>Defense:</strong></div>
+<ul>
+<li>Watch exposed players</li>
+<li>Discard safe tiles (already thrown 3+ times)</li>
+</ul>
+<div class="key-takeaway"><strong>Pivot When:</strong></div>
+<ul>
+<li>No progress by turn 12</li>
+<li>Suit is dead</li>
+<li>Need 5+ singles you haven't seen</li>
+</ul>
+<hr class="divider" />
+<h3><span class="tile-icon">🀄</span>FAST Framework Card (Printable)</h3>
+<pre><code>╔════════════════════════════════════╗
+║      WINNING QUICK - FAST          ║
+╠════════════════════════════════════╣
+║                                    ║
+║  F - FIND the easiest hand         ║
+║      (matches your tiles NOW)      ║
+║                                    ║
+║  A - AVOID dead tiles              ║
+║      (pivot if suit is burned)     ║
+║                                    ║
+║  S - STAY flexible                 ║
+║      (keep 2 hands alive early)    ║
+║                                    ║
+║  T - TAKE progress                 ║
+║      (expose when safe + helpful)  ║
+║                                    ║
+╚════════════════════════════════════╝
+</code></pre>
+<hr class="divider" />
+<h3><span class="tile-icon">🀄</span>My First 10 Games Tracker</h3>
+<div class="key-takeaway"><strong>Use this to improve quickly!</strong></div>
+<h4><span class="tile-icon">🀄</span>Game 1:</h4>
+<ul>
+<li><strong>Hand I chose:</strong> _________________</li>
+<li><strong>When I exposed:</strong> _______________</li>
+<li><strong>When I pivoted (if applicable):</strong> _________________</li>
+<li><strong>Did I win?</strong> ☐ Yes ☐ No</li>
+<li><strong>Who won?</strong> _________________</li>
+<li><strong>Why did they win?</strong> _________________</li>
+<li><strong>What I learned:</strong> _________________</li>
+</ul>
+<h4><span class="tile-icon">🀄</span>Game 2:</h4>
+<ul>
+<li><strong>Hand I chose:</strong> _________________</li>
+<li><strong>When I exposed:</strong> _______________</li>
+<li><strong>When I pivoted (if applicable):</strong> _________________</li>
+<li><strong>Did I win?</strong> ☐ Yes ☐ No</li>
+<li><strong>Who won?</strong> _________________</li>
+<li><strong>Why did they win?</strong> _________________</li>
+<li><strong>What I learned:</strong> _________________</li>
+</ul>
+<p>*(Repeat for Games 3-10)*</p>
+<hr class="divider" />
+<h3><span class="tile-icon">🀄</span>After 10 Games - Reflection:</h3>
+<div class="key-takeaway"><strong>1. What hands worked well for me?</strong></div>
+<p>_______________________________________</p>
+<p>_______________________________________</p>
+<div class="key-takeaway"><strong>2. What mistakes did I make repeatedly?</strong></div>
+<p>_______________________________________</p>
+<p>_______________________________________</p>
+<div class="key-takeaway"><strong>3. When did I feed wins (and how can I avoid it)?</strong></div>
+<p>_______________________________________</p>
+<p>_______________________________________</p>
+<div class="key-takeaway"><strong>4. What do I need to practice most?</strong></div>
+<p>☐ Hand selection</p>
+<p>☐ Charleston passing</p>
+<p>☐ Exposure timing</p>
+<p>☐ Joker discipline</p>
+<p>☐ Pivoting</p>
+<p>☐ Defense</p>
+<div class="key-takeaway"><strong>5. My current win rate:</strong></div>
+<p>_____ wins out of 10 games = _____% win rate</p>
+<p>*(Goal: 20-25% for beginners is solid. Work toward 30%+)*</p>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-15-your-winning-quick-action-plan">
+<h2><span class="tile-icon">🀄</span>CHAPTER 15: YOUR WINNING QUICK ACTION PLAN</h2>
+<h3><span class="tile-icon">🀄</span>Week 1: Foundation</h3>
+<ul>
+<li>Play 5-7 games using FAST framework</li>
+<li>Focus on hand selection (easiest hands)</li>
+<li>Track your games</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Week 2: Charleston + Jokers</h3>
+<ul>
+<li>Practice Charleston discipline (never pass jokers)</li>
+<li>Use jokers correctly (pungs/kongs, not pairs)</li>
+<li>Play 5-7 games</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Week 3: Exposure + Defense</h3>
+<ul>
+<li>Only expose when 3-4 tiles from Mahjong</li>
+<li>Practice defensive discards when opponents are exposed</li>
+<li>Play 5-7 games</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Week 4: Integration</h3>
+<ul>
+<li>Use ALL strategies together</li>
+<li>Play 10 games</li>
+<li>Track win rate improvement</li>
+</ul>
+<div class="key-takeaway"><strong>Goal: 25-30% win rate by end of Week 4</strong></div>
+<p>(20-25% is beginner average; 30%+ is strong beginner performance)</p>
+<hr class="divider" />
+</section>
+<section class="chapter" id="final-thoughts">
+<h2><span class="tile-icon">🀄</span>FINAL THOUGHTS</h2>
+<div class="key-takeaway"><strong>Winning Quick isn't about being the best player.</strong></div>
+<p>It's about:</p>
+<ul>
+<li>Making smart, simple decisions</li>
+<li>Finishing hands consistently</li>
+<li>Avoiding costly mistakes</li>
+<li>Not feeding wins</li>
+</ul>
+<div class="key-takeaway"><strong>These strategies work. They're beginner-friendly. And they'll get you more wins, faster.</strong></div>
+<div class="key-takeaway"><strong>Now it's your turn.</strong></div>
+<div class="key-takeaway"><strong>Go play. Use FAST. Track your progress. And watch your wins increase.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="ready-to-level-up">
+<h2><span class="tile-icon">🀄</span>READY TO LEVEL UP?</h2>
+<p>Once you're consistently finishing hands and winning 25-30% of your games, it's time to upgrade your strategy.</p>
+<h3><span class="tile-icon">🀄</span>👉 <strong>Get Mahjong 101: American Mahjong Made Simple</strong></h3>
+<p>Master the complete rules, advanced Charleston tactics, and intermediate strategies that will take you from beginner to confident player.</p>
+<div class="key-takeaway"><strong>What you'll master:</strong></div>
+<ul>
+<li>Complete rules breakdown</li>
+<li>How to read the NMJL card</li>
+<li>Charleston step-by-step strategy</li>
+<li>Joker rules that make sense</li>
+<li>Dallas Mahjong/Blanks included</li>
+<li>Quick reference cheat sheets</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>👉 <strong>Get Mahjong 201: The Consistency Playbook</strong></h3>
+<p>Once you're comfortable with the basics, learn the SCAN-SHAPE-COMMIT-DEFEND framework that intermediate players use to win WITHOUT relying on luck.</p>
+<div class="key-takeaway"><strong>Visit MahjongMastery.com to continue your journey!</strong></div>
+<hr class="divider" />
+<div class="key-takeaway"><strong>Happy Playing—and Happy Winning!</strong></div>
+<p>© 2026 MahjongMastery • www.MahjongMastery.com</p>
+<hr class="divider" />
+</section>
+<section class="chapter" id="printable-quick-reference">
+<h2><span class="tile-icon">🀄</span>PRINTABLE QUICK REFERENCE</h2>
+<h3><span class="tile-icon">🀄</span>✅ HAND SELECTION CHECKLIST</h3>
+<div class="key-takeaway"><strong>Choose hands that:</strong></div>
+<ul>
+<li>☐ Use 1 suit + honors</li>
+<li>☐ Have built-in pairs</li>
+<li>☐ Don't require 5+ singles</li>
+<li>☐ Match your current tiles</li>
+</ul>
+<div class="key-takeaway"><strong>Avoid hands that:</strong></div>
+<ul>
+<li>☐ Need tiles you haven't seen</li>
+<li>☐ Require perfect Charleston</li>
+<li>☐ Are too complicated</li>
+</ul>
+<hr class="divider" />
+<h3><span class="tile-icon">🀄</span>✅ CHARLESTON CHECKLIST</h3>
+<div class="key-takeaway"><strong>KEEP:</strong></div>
+<ul>
+<li>☐ Jokers (always!)</li>
+<li>☐ Pairs</li>
+<li>☐ Pungs</li>
+</ul>
+<div class="key-takeaway"><strong>PASS:</strong></div>
+<ul>
+<li>☐ Isolated tiles</li>
+<li>☐ Off-suit tiles</li>
+<li>☐ Confusing tiles</li>
+</ul>
+<hr class="divider" />
+<h3><span class="tile-icon">🀄</span>✅ EXPOSURE CHECKLIST</h3>
+<div class="key-takeaway"><strong>Expose when:</strong></div>
+<ul>
+<li>☐ 3-4 tiles from Mahjong</li>
+<li>☐ Have jokers as backup</li>
+<li>☐ Tile is rare/critical</li>
+</ul>
+<div class="key-takeaway"><strong>Don't expose when:</strong></div>
+<ul>
+<li>☐ Still unsure of hand</li>
+<li>☐ Far from finishing</li>
+<li>☐ Need exact singles later</li>
+</ul>
+<hr class="divider" />
+<h3><span class="tile-icon">🀄</span>✅ DEFENSE CHECKLIST</h3>
+<div class="key-takeaway"><strong>When opponent is exposed:</strong></div>
+<ul>
+<li>☐ Assume danger</li>
+<li>☐ Don't throw tiles matching their exposures</li>
+<li>☐ Throw tiles already discarded 3+ times</li>
+<li>☐ Play boring (safe discards)</li>
+</ul>
+<hr class="divider" />
+<h3><span class="tile-icon">🀄</span>✅ PIVOT CHECKLIST</h3>
+<div class="key-takeaway"><strong>Pivot when:</strong></div>
+<ul>
+<li>☐ No progress by turn 12</li>
+<li>☐ Need 5+ singles not seen</li>
+<li>☐ Suit is getting burned</li>
+<li>☐ Two players exposed and ahead</li>
+</ul>
+<hr class="divider" />
+<div class="key-takeaway"><strong>Cut out these checklists and keep them at the table during your first 20 games!</strong></div>
+<hr class="divider" />
+<div class="key-takeaway"><strong>You've got this. Now go win!</strong></div>
+<p>© 2026 MahjongMastery</p>
+</section>
+
+  </section>
+
+  <footer class="footer">© 2026 MahjongMastery • www.MahjongMastery.com • Page <span class="page-number"></span></footer>
+</body>
+</html>

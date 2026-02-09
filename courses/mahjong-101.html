@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MAHJONG 101 | Mahjong Mastery</title>
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --rose: #D4A5A5;
+    --sage: #A8B5A0;
+    --ink: #2f2f2f;
+    --accent: #7b5b5b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+  }
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 64px 64px 96px;
+    background: var(--cream);
+  }
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(160deg, #FAF7F2 0%, #F5ECE8 55%, #E9D8D6 100%);
+    border-bottom: 8px solid var(--sage);
+  }
+  .cover .title {
+    font-size: 52px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .cover .subtitle {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+  .cover .tagline {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  .cover .author {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--sage);
+  }
+  .cover .price {
+    margin-top: 12px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--accent);
+  }
+  .tile-art {
+    display: flex;
+    gap: 24px;
+    margin: 32px 0;
+  }
+  .tile-svg {
+    width: 70px;
+    height: 90px;
+    border-radius: 10px;
+    background: #fff;
+    border: 2px solid var(--sage);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    padding: 8px;
+  }
+  h1, h2, h3, h4 {
+    font-family: "Palatino Linotype", "Book Antiqua", serif;
+    color: #3b2f2f;
+  }
+  h2 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--rose);
+  }
+  h3 {
+    font-size: 20px;
+    margin-top: 24px;
+  }
+  .tile-icon { margin-right: 8px; }
+  .divider {
+    border: none;
+    border-top: 2px solid var(--sage);
+    margin: 24px 0;
+  }
+  .toc {
+    margin: 24px 0 48px;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid var(--rose);
+    border-radius: 12px;
+  }
+  .toc h2 { margin-top: 0; }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  ul, ol { padding-left: 24px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  th { background: #f2ece8; }
+  .table-wrap { margin: 16px 0; overflow-x: auto; }
+
+  .key-takeaway {
+    background: #f8e9e9;
+    border-left: 4px solid var(--rose);
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-style: italic;
+  }
+  .practice-box {
+    border: 2px solid var(--sage);
+    background: #fff;
+    padding: 16px 18px;
+    margin: 18px 0;
+    border-radius: 10px;
+  }
+
+  footer.footer {
+    position: fixed;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+  }
+  .page-number:before { content: counter(page); }
+
+  @media print {
+    body { background: #fff; color: #000; }
+    .page { background: #fff; padding: 32px; }
+    .cover { background: #fff; border: none; }
+    .tile-art, .tile-svg { display: none !important; }
+    a { color: #000; text-decoration: none; }
+    .chapter { break-before: page; }
+    .chapter:first-of-type { break-before: auto; }
+    .toc { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+  <section class="cover page">
+    <div class="tile-art">
+      <div class="tile-svg">
+<svg viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="8" width="64" height="94" rx="8" fill="#fefdfb" stroke="#A8B5A0" stroke-width="2"/>
+  <rect x="24" y="18" width="10" height="70" rx="4" fill="#A8B5A0"/>
+  <rect x="46" y="18" width="10" height="70" rx="4" fill="#A8B5A0"/>
+  <circle cx="29" cy="40" r="3" fill="#D4A5A5"/>
+  <circle cx="51" cy="60" r="3" fill="#D4A5A5"/>
+</svg></div>
+      <div class="tile-svg">
+<svg viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="8" width="64" height="94" rx="8" fill="#fefdfb" stroke="#D4A5A5" stroke-width="2"/>
+  <circle cx="40" cy="48" r="10" fill="#D4A5A5"/>
+  <circle cx="30" cy="40" r="8" fill="#F2D0D0"/>
+  <circle cx="50" cy="40" r="8" fill="#F2D0D0"/>
+  <circle cx="30" cy="56" r="8" fill="#F2D0D0"/>
+  <circle cx="50" cy="56" r="8" fill="#F2D0D0"/>
+  <rect x="37" y="60" width="6" height="24" fill="#A8B5A0"/>
+</svg></div>
+      <div class="tile-svg">
+<svg viewBox="0 0 80 110" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="8" width="64" height="94" rx="8" fill="#fefdfb" stroke="#A8B5A0" stroke-width="2"/>
+  <path d="M24 70 C34 50, 50 50, 58 68" fill="none" stroke="#A8B5A0" stroke-width="4"/>
+  <circle cx="34" cy="54" r="6" fill="#D4A5A5"/>
+  <circle cx="48" cy="54" r="6" fill="#D4A5A5"/>
+  <circle cx="30" cy="54" r="2" fill="#3b2f2f"/>
+</svg></div>
+    </div>
+    <div class="title">MAHJONG 101</div>
+    <div class="subtitle">American Mahjong Made Simple</div>
+    <div class="tagline">Your Complete Beginner's Guide to Rules, Setup, and Your First Wins</div>
+    <div class="author">By Mahjong Mastery</div>
+    <div class="price">$37</div>
+  </section>
+
+  <section class="page">
+    <div class="toc">
+      <h2>Table of Contents</h2>
+      <ul><li><a href="#welcome-to-american-mahjong">WELCOME TO AMERICAN MAHJONG!</a></li>
+<li><a href="#chapter-1-what-american-mahjong-is-and-what-it-is-not">CHAPTER 1: WHAT AMERICAN MAHJONG IS (AND WHAT IT IS NOT)</a></li>
+<li><a href="#chapter-2-your-equipment-setup">CHAPTER 2: YOUR EQUIPMENT + SETUP</a></li>
+<li><a href="#chapter-3-tile-categories-beginner-cheat-sheet">CHAPTER 3: TILE CATEGORIES (BEGINNER CHEAT SHEET)</a></li>
+<li><a href="#chapter-4-the-nmjl-card-how-to-read-it">CHAPTER 4: THE NMJL CARD - HOW TO READ IT</a></li>
+<li><a href="#chapter-5-the-deal-starting-the-game">CHAPTER 5: THE DEAL + STARTING THE GAME</a></li>
+<li><a href="#chapter-6-the-charleston-step-by-step">CHAPTER 6: THE CHARLESTON (STEP-BY-STEP)</a></li>
+<li><a href="#chapter-7-how-to-play-a-turn">CHAPTER 7: HOW TO PLAY A TURN</a></li>
+<li><a href="#chapter-8-jokers-101">CHAPTER 8: JOKERS 101</a></li>
+<li><a href="#chapter-9-calling-tiles-exposures">CHAPTER 9: CALLING TILES + EXPOSURES</a></li>
+<li><a href="#chapter-10-exposures">CHAPTER 10: EXPOSURES</a></li>
+<li><a href="#chapter-11-winning-mahjong-and-end-of-hand">CHAPTER 11: WINNING, MAHJONG, AND END OF HAND</a></li>
+<li><a href="#chapter-12-dallas-mahjong-blanks-version-beginner-rules">CHAPTER 12: DALLAS MAHJONG / BLANKS VERSION (BEGINNER RULES)</a></li>
+<li><a href="#chapter-13-beginner-strategy-that-actually-works">CHAPTER 13: BEGINNER STRATEGY THAT ACTUALLY WORKS</a></li>
+<li><a href="#chapter-14-beginner-hand-selection">CHAPTER 14: BEGINNER HAND SELECTION</a></li>
+<li><a href="#chapter-15-charleston-strategy-beginner">CHAPTER 15: CHARLESTON STRATEGY (BEGINNER)</a></li>
+<li><a href="#chapter-16-joker-discipline-beginner">CHAPTER 16: JOKER DISCIPLINE (BEGINNER)</a></li>
+<li><a href="#chapter-17-defense-for-beginners">CHAPTER 17: DEFENSE FOR BEGINNERS</a></li>
+<li><a href="#chapter-18-when-to-pivot-vs-when-to-commit">CHAPTER 18: WHEN TO PIVOT VS. WHEN TO COMMIT</a></li>
+<li><a href="#chapter-19-your-first-game-checklist">CHAPTER 19: YOUR FIRST GAME CHECKLIST</a></li>
+<li><a href="#chapter-20-common-beginner-mistakes-and-the-fix">CHAPTER 20: COMMON BEGINNER MISTAKES (AND THE FIX)</a></li>
+<li><a href="#chapter-21-quick-reference-pages">CHAPTER 21: QUICK REFERENCE PAGES</a></li>
+<li><a href="#chapter-22-bonus-worksheet-my-first-5-games-tracker">CHAPTER 22: BONUS WORKSHEET - MY FIRST 5 GAMES TRACKER</a></li>
+<li><a href="#congratulations">CONGRATULATIONS!</a></li>
+<li><a href="#ready-to-win-more">READY TO WIN MORE?</a></li></ul>
+    </div>
+    <hr class="divider" />
+<section class="chapter" id="welcome-to-american-mahjong">
+<h2><span class="tile-icon">🀄</span>WELCOME TO AMERICAN MAHJONG!</h2>
+<p>You're about to learn one of the most social, strategic, and addictive games in the world. Whether you've never touched a tile or you've watched others play and felt completely lost, this guide will take you from confused beginner to confident player.</p>
+<div class="key-takeaway"><strong>What You'll Master:</strong></div>
+<ul>
+<li>Complete game rules (no confusion)</li>
+<li>How to read the NMJL card</li>
+<li>Charleston passing strategy</li>
+<li>When and how to expose tiles</li>
+<li>Joker rules that actually make sense</li>
+<li>Beginner winning strategies</li>
+<li>Dallas Mahjong (blanks) variation</li>
+</ul>
+<div class="key-takeaway"><strong>By the end of this guide, you'll be ready to sit down at any table and play with confidence.</strong></div>
+<p>Let's get started!</p>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-1-what-american-mahjong-is-and-what-it-is-not">
+<h2><span class="tile-icon">🀄</span>CHAPTER 1: WHAT AMERICAN MAHJONG IS (AND WHAT IT IS NOT)</h2>
+<h3><span class="tile-icon">🀄</span>The Core Concept</h3>
+<p>American Mahjong is a <strong>tile-based rummy game</strong> for four players where you:</p>
+<ol>
+<li>Choose a hand from the official card</li>
+<li>Collect tiles to match that hand pattern</li>
+<li>Complete your hand and call "Mahjong!"</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>It's NOT:</h3>
+<ul>
+<li>Chinese Mahjong (different rules, different scoring)</li>
+<li>A luck-only game (strategy matters enormously)</li>
+<li>Impossible to learn (you can play your first game today!)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Three Things Make American Mahjong Unique:</h3>
+<div class="key-takeaway"><strong>1. The NMJL Card</strong></div>
+<p>Every year, the National Mah Jongg League publishes a card with ~50 winning hand patterns. You choose one and build toward it.</p>
+<div class="key-takeaway"><strong>2. Jokers (Wild Tiles)</strong></div>
+<p>Jokers can substitute for any tile in your hand—except in specific situations (we'll cover this).</p>
+<div class="key-takeaway"><strong>3. The Charleston</strong></div>
+<p>Before play begins, you pass tiles to other players. This is your chance to improve your starting hand.</p>
+<h3><span class="tile-icon">🀄</span>Your Goal Every Game:</h3>
+<p>Be the first to complete a winning hand pattern from the card.</p>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-2-your-equipment-setup">
+<h2><span class="tile-icon">🀄</span>CHAPTER 2: YOUR EQUIPMENT + SETUP</h2>
+<h3><span class="tile-icon">🀄</span>The Tiles (166 Total)</h3>
+<div class="key-takeaway"><strong>THREE SUITS (36 each = 108 total):</strong></div>
+<div class="key-takeaway"><strong>Dots</strong> - Circles in various arrangements</div>
+<ul>
+<li>1-9, four copies of each number</li>
+</ul>
+<div class="key-takeaway"><strong>Bams</strong> - Bamboo sticks</div>
+<ul>
+<li>1-9, four copies of each number</li>
+<li>Note: 1 Bam often looks like a bird</li>
+</ul>
+<div class="key-takeaway"><strong>Craks</strong> - Chinese characters with numbers</div>
+<ul>
+<li>1-9, four copies of each number</li>
+</ul>
+<div class="key-takeaway"><strong>HONORS (28 total):</strong></div>
+<div class="key-takeaway"><strong>Winds (16 tiles)</strong></div>
+<ul>
+<li>East, South, West, North</li>
+<li>Four of each wind</li>
+</ul>
+<div class="key-takeaway"><strong>Dragons (12 tiles)</strong></div>
+<ul>
+<li>Red Dragon (紅)</li>
+<li>Green Dragon (發)</li>
+<li>White Dragon (often blank or framed)</li>
+<li>Four of each dragon</li>
+</ul>
+<div class="key-takeaway"><strong>BONUS TILES (30 total):</strong></div>
+<div class="key-takeaway"><strong>Flowers (8 tiles)</strong></div>
+<ul>
+<li>Usually numbered 1-8</li>
+<li>Often have floral artwork</li>
+</ul>
+<div class="key-takeaway"><strong>Jokers (8-10 tiles)</strong></div>
+<ul>
+<li>Marked "JOKER" or special symbol</li>
+<li>Your wild cards!</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>The Racks</h3>
+<ul>
+<li>Each player has a rack to hold their 13-14 tiles</li>
+<li>Angled racks make it easier to see your hand</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>The Dice</h3>
+<ul>
+<li>Two dice (sometimes four)</li>
+<li>Used to determine who breaks the wall</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>The NMJL Card</h3>
+<ul>
+<li>Published annually (buy new each year)</li>
+<li>Contains all valid winning hands</li>
+<li>Organized by section/category</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Optional Accessories:</h3>
+<ul>
+<li>Chips/money (for scoring)</li>
+<li>Pushers (help build walls)</li>
+<li>Wind indicator</li>
+<li>Card holders</li>
+</ul>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-3-tile-categories-beginner-cheat-sheet">
+<h2><span class="tile-icon">🀄</span>CHAPTER 3: TILE CATEGORIES (BEGINNER CHEAT SHEET)</h2>
+<p>Understanding tile terminology is essential for reading the card.</p>
+<h3><span class="tile-icon">🀄</span>Singles, Pairs, Pungs, and Kongs</h3>
+<div class="key-takeaway"><strong>Single:</strong></div>
+<ul>
+<li>One tile</li>
+<li>Example: 3 Dot</li>
+</ul>
+<div class="key-takeaway"><strong>Pair:</strong></div>
+<ul>
+<li>Two identical tiles</li>
+<li>Example: 5 Crak, 5 Crak</li>
+</ul>
+<div class="key-takeaway"><strong>Pung:</strong></div>
+<ul>
+<li>Three identical tiles</li>
+<li>Example: North Wind, North Wind, North Wind</li>
+</ul>
+<div class="key-takeaway"><strong>Kong:</strong></div>
+<ul>
+<li>Four identical tiles</li>
+<li>Example: 2 Bam, 2 Bam, 2 Bam, 2 Bam</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Runs (Sequential Tiles)</h3>
+<ul>
+<li>Three or more tiles in numerical order from the same suit</li>
+<li>Example: 4-5-6 Dots</li>
+</ul>
+<div class="key-takeaway"><strong>Important:</strong> Runs MUST be the same suit</div>
+<ul>
+<li>4-5-6 Dots = Valid</li>
+<li>4 Dot, 5 Bam, 6 Crak = Invalid</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Like Numbers</h3>
+<ul>
+<li>Same number across different suits</li>
+<li>Example: 7 Dot, 7 Bam, 7 Crak</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Suits vs. Honors</h3>
+<ul>
+<li><strong>Suits:</strong> Dots, Bams, Craks (have numbers 1-9)</li>
+<li><strong>Honors:</strong> Winds and Dragons (no numbers)</li>
+<li>Some hands use only suits, some mix suits and honors</li>
+</ul>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-4-the-nmjl-card-how-to-read-it">
+<h2><span class="tile-icon">🀄</span>CHAPTER 4: THE NMJL CARD - HOW TO READ IT</h2>
+<p>The card looks intimidating at first, but it's actually very logical.</p>
+<h3><span class="tile-icon">🀄</span>Card Structure</h3>
+<div class="key-takeaway"><strong>Sections (Categories):</strong></div>
+<p>Each year's card has ~8-10 sections, such as:</p>
+<ul>
+<li>2468</li>
+<li>Consecutive Run</li>
+<li>13579</li>
+<li>Winds &amp; Dragons</li>
+<li>Year (specific to current year)</li>
+<li>Singles &amp; Pairs</li>
+<li>Quints</li>
+</ul>
+<p>Each section contains 4-6 hand patterns.</p>
+<h3><span class="tile-icon">🀄</span>How to Read a Hand Pattern</h3>
+<p>Hands are written in shorthand. Here's how to decode them:</p>
+<div class="key-takeaway"><strong>Example hand:</strong></div>
+<div class="key-takeaway"><strong>DDDD 111 222 333</strong></div>
+<div class="key-takeaway"><strong>What this means:</strong></div>
+<ul>
+<li>DDDD = Four dragons (any dragon—you pick)</li>
+<li>111 = Three ones (1-1-1 of any suit)</li>
+<li>222 = Three twos (2-2-2 of any suit)</li>
+<li>333 = Three threes (3-3-3 of any suit)</li>
+</ul>
+<div class="key-takeaway"><strong>Translation:</strong> You need four dragons (all the same) and three pungs of 1s, 2s, and 3s.</div>
+<h3><span class="tile-icon">🀄</span>Common Card Symbols:</h3>
+<ul>
+<li><strong>Parentheses ()</strong> = Optional/can be different suits</li>
+<li><strong>Capital letters (DDDD, FF, NEWS)</strong> = Honors</li>
+<li>D = Dragon</li>
+<li>F = Flower</li>
+<li>N = North, E = East, W = West, S = South</li>
+<li><strong>Numbers</strong> = Tile values</li>
+<li><strong>Spaces</strong> = Separate groups</li>
+<li><strong>Same line = Same suit</strong></li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Beginner Tip:</h3>
+<p>Start by looking at hands that use "Any Like Numbers" or "One Suit + Dragons" patterns. These are usually easier to complete.</p>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-5-the-deal-starting-the-game">
+<h2><span class="tile-icon">🀄</span>CHAPTER 5: THE DEAL + STARTING THE GAME</h2>
+<h3><span class="tile-icon">🀄</span>Seating</h3>
+<div class="key-takeaway"><strong>Determine seats randomly:</strong></div>
+<ol>
+<li>Each player draws a Wind tile</li>
+<li>Arrange yourselves: East, South, West, North (clockwise)</li>
+<li>East is the dealer for the first game</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>Building the Walls</h3>
+<div class="key-takeaway"><strong>Each player:</strong></div>
+<ol>
+<li>Takes 34-36 tiles (depending on variations)</li>
+<li>Arranges them face-down in a wall</li>
+<li>Wall is 17 tiles long × 2 tiles high</li>
+<li>Place your wall in front of your rack</li>
+</ol>
+<div class="key-takeaway"><strong>The four walls form a square in the center of the table.</strong></div>
+<h3><span class="tile-icon">🀄</span>Breaking the Wall</h3>
+<ol>
+<li>East rolls both dice</li>
+<li>Count counter-clockwise from East (1 = East, 2 = South, etc.)</li>
+<li>The player indicated rolls again</li>
+<li>Count that many stacks from the right end of THAT player's wall</li>
+<li>Break the wall at that point</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>The Deal</h3>
+<div class="key-takeaway"><strong>Starting from the break:</strong></div>
+<ul>
+<li>East takes 4 tiles (2 stacks), then South, West, North</li>
+<li>Repeat until everyone has 12 tiles</li>
+<li>East takes tiles 1 and 5 from the next group (14 total)</li>
+<li>South, West, North each take 1 tile (13 total)</li>
+</ul>
+<div class="key-takeaway"><strong>Result:</strong></div>
+<ul>
+<li>East: 14 tiles (goes first)</li>
+<li>South, West, North: 13 tiles each</li>
+</ul>
+<div class="key-takeaway"><strong>All players rack their tiles and organize them by suit.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-6-the-charleston-step-by-step">
+<h2><span class="tile-icon">🀄</span>CHAPTER 6: THE CHARLESTON (STEP-BY-STEP)</h2>
+<div class="practice-box">
+  <h3>Practice Scenario: Charleston Decision</h3>
+  <p>You have: 2-2-2 Dots, 6-7-8 Bams, North, Red Dragon, Joker.</p>
+  <p><strong>Question:</strong> Which three tiles do you pass on Pass 1 (Right)?</p>
+  <p><strong>Answer:</strong> Pass North, Red Dragon, and 6 Bam. Keep the pung of 2 Dots and the 7-8 Bam run potential. Keep the joker.</p>
+</div>
+<p>The Charleston is American Mahjong's unique tile-passing ritual. It's your chance to improve your hand before play begins.</p>
+<h3><span class="tile-icon">🀄</span>What It Is</h3>
+<p>A structured series of tile passes where you:</p>
+<ol>
+<li>Choose 3 tiles to pass</li>
+<li>Pass them to specific players</li>
+<li>Receive 3 tiles from others</li>
+<li>Repeat several times</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>Why It Exists</h3>
+<ul>
+<li>Improves your starting hand</li>
+<li>Gets rid of unwanted tiles</li>
+<li>Starts shaping your hand toward the card</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>The Three Passes (Mandatory)</h3>
+<div class="key-takeaway"><strong>First Charleston:</strong></div>
+<div class="key-takeaway"><strong>Pass 1 - RIGHT</strong></div>
+<ul>
+<li>Choose 3 tiles you don't want</li>
+<li>Pass them to the player on your right</li>
+<li>Receive 3 tiles from your left</li>
+</ul>
+<div class="key-takeaway"><strong>Pass 2 - ACROSS</strong></div>
+<ul>
+<li>Choose 3 tiles</li>
+<li>Pass to the player across from you</li>
+<li>Receive 3 from across</li>
+</ul>
+<div class="key-takeaway"><strong>Pass 3 - LEFT</strong></div>
+<ul>
+<li>Choose 3 tiles</li>
+<li>Pass to the player on your left</li>
+<li>Receive 3 from your right</li>
+</ul>
+<div class="key-takeaway"><strong>Optional Second Charleston:</strong></div>
+<p>After the first three passes, the group can vote to do a second Charleston (same pattern: Right, Across, Left).</p>
+<div class="key-takeaway"><strong>Optional Courtesy Pass:</strong></div>
+<p>After all Charlestons, you may pass 0-3 tiles across to the player opposite you.</p>
+<h3><span class="tile-icon">🀄</span>Beginner Passing Strategy</h3>
+<div class="key-takeaway"><strong>What to Pass:</strong></div>
+<p>Pass tiles that:</p>
+<ul>
+<li>Don't fit any hand you're considering</li>
+<li>Are from suits you're not using</li>
+<li>Are isolated (single tiles with no matches)</li>
+<li>Are honors you don't need</li>
+</ul>
+<div class="key-takeaway"><strong>What to Keep:</strong></div>
+<p>Keep tiles that:</p>
+<ul>
+<li>Form pairs (you have 2 of them)</li>
+<li>Form pungs (you have 3 of them)</li>
+<li>Are jokers (ALWAYS keep jokers)</li>
+<li>Fit multiple hand possibilities</li>
+</ul>
+<div class="key-takeaway"><strong>The #1 Rule:</strong> Don't try to be perfect. Just get cleaner.</div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-7-how-to-play-a-turn">
+<h2><span class="tile-icon">🀄</span>CHAPTER 7: HOW TO PLAY A TURN</h2>
+<h3><span class="tile-icon">🀄</span>Turn Structure</h3>
+<ol>
+<li><strong>Draw a tile</strong> (from the wall)</li>
+<li><strong>Evaluate your hand</strong> (does this help?)</li>
+<li><strong>Discard a tile</strong> (announce it clearly)</li>
+</ol>
+<p>OR</p>
+<ol>
+<li><strong>Call a discard</strong> (if someone throws what you need)</li>
+<li><strong>Expose your meld</strong> (show what you're making)</li>
+<li><strong>Discard a tile</strong></li>
+</ol>
+<h3><span class="tile-icon">🀄</span>The Flow</h3>
+<ul>
+<li>East goes first (has 14 tiles)</li>
+<li>East discards</li>
+<li>South draws and discards</li>
+<li>West draws and discards</li>
+<li>North draws and discards</li>
+<li>Repeat until someone wins</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>When You Can't Win</h3>
+<p>If all tiles are drawn and nobody has won:</p>
+<ul>
+<li>The hand is a "wall game"</li>
+<li>No winner</li>
+<li>Reshuffle and start a new game</li>
+</ul>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-8-jokers-101">
+<h2><span class="tile-icon">🀄</span>CHAPTER 8: JOKERS 101</h2>
+<p>Jokers are wild cards, but they have rules.</p>
+<h3><span class="tile-icon">🀄</span>What Jokers CAN Do:</h3>
+<ul>
+<li>Replace any tile in a <strong>Pung, Kong, or Quint</strong></li>
+<li>Replace any tile in a <strong>Run</strong> (sequential tiles)</li>
+<li>Be swapped out if an opponent has the real tile (advanced rule)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>What Jokers CANNOT Do:</h3>
+<ul>
+<li>Replace tiles in a <strong>Pair</strong></li>
+<li>Replace <strong>Flowers</strong> or <strong>Singles</strong></li>
+<li>Be used for isolated tiles</li>
+</ul>
+<div class="key-takeaway"><strong>Example:</strong></div>
+<div class="key-takeaway"><strong>Valid:</strong></div>
+<ul>
+<li>5-5-Joker (Pung of 5s)</li>
+<li>3-4-Joker-6-7 (Run with joker as 5)</li>
+<li>8-8-8-Joker (Kong)</li>
+</ul>
+<div class="key-takeaway"><strong>Invalid:</strong></div>
+<ul>
+<li>9-Joker (Pair—NO)</li>
+<li>Single Joker for a "2" requirement (NO)</li>
+<li>Joker for Flower tile (NO)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>The #1 Joker Mistake Beginners Make</h3>
+<div class="key-takeaway"><strong>Mistake:</strong> Using jokers for pairs or singles</div>
+<div class="key-takeaway"><strong>Fix:</strong> Jokers only work in groups of 3+ tiles (pungs, kongs, runs, quints)</div>
+<h3><span class="tile-icon">🀄</span>Joker Strategy for Beginners</h3>
+<ul>
+<li><strong>Keep your jokers through the Charleston</strong></li>
+<li>Use them to complete pungs/kongs</li>
+<li>Don't waste them early</li>
+<li>Having 2-3 jokers gives you huge flexibility</li>
+</ul>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-9-calling-tiles-exposures">
+<h2><span class="tile-icon">🀄</span>CHAPTER 9: CALLING TILES + EXPOSURES</h2>
+<h3><span class="tile-icon">🀄</span>When You Can Call a Tile</h3>
+<p>When any player discards a tile you need, you can:</p>
+<div class="key-takeaway"><strong>Call it</strong> by saying the tile name aloud</div>
+<ul>
+<li>Example: "Three Crak!"</li>
+</ul>
+<div class="key-takeaway"><strong>Expose the meld</strong> you're making with it</div>
+<ul>
+<li>Place the tiles face-up on your rack</li>
+<li>Include the joker if you're using one</li>
+</ul>
+<div class="key-takeaway"><strong>Discard a tile</strong> from your hand</div>
+<h3><span class="tile-icon">🀄</span>What You Can Call For:</h3>
+<ul>
+<li><strong>Pungs</strong> (you have 2, need the 3rd)</li>
+<li><strong>Kongs</strong> (you have 3, need the 4th)</li>
+<li><strong>Runs</strong> (you need a specific tile to complete a sequence)</li>
+<li><strong>Mahjong</strong> (the tile completes your entire hand)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Calling Priority:</h3>
+<ol>
+<li><strong>Mahjong</strong> (wins the game—highest priority)</li>
+<li><strong>Exposure</strong> (pung, kong, or run)</li>
+<li>If two people call for exposure, the player closest to the discarder's right goes first</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>When NOT to Call</h3>
+<div class="key-takeaway"><strong>Don't call if:</strong></div>
+<ul>
+<li>It locks you into a hand you're not sure about</li>
+<li>You're still keeping options open</li>
+<li>The tile isn't critical yet</li>
+<li>You'd rather stay concealed for flexibility</li>
+</ul>
+<div class="key-takeaway"><strong>Beginner rule:</strong> Only call when you're confident about your hand and the tile genuinely helps.</div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-10-exposures">
+<h2><span class="tile-icon">🀄</span>CHAPTER 10: EXPOSURES</h2>
+<h3><span class="tile-icon">🀄</span>What Exposing Means</h3>
+<p>When you call a tile and show your meld face-up on your rack, you've <strong>exposed</strong>.</p>
+<h3><span class="tile-icon">🀄</span>Pros of Exposing:</h3>
+<ul>
+<li>Shows progress (psychological pressure)</li>
+<li>Prevents others from using those tiles</li>
+<li>Can speed up your hand completion</li>
+<li>Commits you to a path</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Cons of Exposing:</h3>
+<ul>
+<li>Reveals your hand to opponents</li>
+<li>Reduces flexibility (you're locked in)</li>
+<li>Can't change hands easily</li>
+<li>Makes you a target for defensive play</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>The Exposure Decision</h3>
+<div class="key-takeaway"><strong>Expose when:</strong></div>
+<ul>
+<li>You're close to winning (1-2 tiles away)</li>
+<li>The tile is critical and rare</li>
+<li>You have jokers supporting your plan</li>
+<li>Your hand is clear and likely to finish</li>
+</ul>
+<div class="key-takeaway"><strong>Stay concealed when:</strong></div>
+<ul>
+<li>You're still undecided on your hand</li>
+<li>You have multiple possible hands</li>
+<li>It's early in the game</li>
+<li>You need very specific tiles later</li>
+</ul>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-11-winning-mahjong-and-end-of-hand">
+<h2><span class="tile-icon">🀄</span>CHAPTER 11: WINNING, MAHJONG, AND END OF HAND</h2>
+<h3><span class="tile-icon">🀄</span>Calling Mahjong</h3>
+<p>When you complete your hand:</p>
+<ol>
+<li><strong>Call "Mahjong!"</strong> immediately</li>
+<li><strong>Lay your tiles face-up</strong></li>
+<li><strong>Show which hand from the card you made</strong></li>
+<li>Other players verify it's correct</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>What Happens After a Win:</h3>
+<div class="key-takeaway"><strong>If correct:</strong></div>
+<ul>
+<li>You score points (or collect payment)</li>
+<li>Winner becomes East for next game</li>
+<li>Tiles are reshuffled</li>
+</ul>
+<div class="key-takeaway"><strong>If incorrect (rare but happens):</strong></div>
+<ul>
+<li>You pay a penalty to all players</li>
+<li>Hand continues without you</li>
+<li>Be certain before calling Mahjong!</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Dead Hands</h3>
+<p>Your hand becomes "dead" if:</p>
+<ul>
+<li>You expose an invalid meld</li>
+<li>You pick up the wrong number of tiles</li>
+<li>You call Mahjong incorrectly</li>
+</ul>
+<div class="key-takeaway"><strong>Dead hand = you're out for that round</strong></div>
+<h3><span class="tile-icon">🀄</span>Common Table Etiquette:</h3>
+<ul>
+<li>Announce discards clearly</li>
+<li>Don't rush other players</li>
+<li>Keep your tiles organized</li>
+<li>Be respectful if someone feeds you a win</li>
+<li>No gloating—everyone wins and loses</li>
+</ul>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-12-dallas-mahjong-blanks-version-beginner-rules">
+<h2><span class="tile-icon">🀄</span>CHAPTER 12: DALLAS MAHJONG / BLANKS VERSION (BEGINNER RULES)</h2>
+<p>Dallas Mahjong is a popular variation where <strong>jokers can be swapped out</strong> during play.</p>
+<h3><span class="tile-icon">🀄</span>What Blanks Are</h3>
+<p>"Blanks" usually refers to the jokers, which can be swapped when exposed.</p>
+<h3><span class="tile-icon">🀄</span>How Swapping Works</h3>
+<div class="key-takeaway"><strong>If a player has exposed a meld with a joker:</strong></div>
+<p>Another player can:</p>
+<ol>
+<li>Take their turn normally (draw a tile)</li>
+<li><strong>Before discarding</strong>, swap the joker by giving the real tile</li>
+<li>Take the joker into their hand</li>
+<li>Then discard normally</li>
+</ol>
+<div class="key-takeaway"><strong>Example:</strong></div>
+<p>You exposed: <strong>6-6-Joker</strong> (Pung of 6 Craks)</p>
+<p>Opponent has a 6 Crak they don't need.</p>
+<p>They can:</p>
+<ul>
+<li>Give you their real 6 Crak</li>
+<li>Take your joker</li>
+<li>Now you have 6-6-6 Craks (no joker)</li>
+<li>They have a joker to use elsewhere</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Important Rules:</h3>
+<div class="key-takeaway"><strong>You CAN swap when:</strong></div>
+<ul>
+<li>The joker is in an exposed meld</li>
+<li>You have the exact tile the joker represents</li>
+<li>It's your turn</li>
+</ul>
+<div class="key-takeaway"><strong>You CANNOT swap:</strong></div>
+<ul>
+<li>Jokers in concealed hands</li>
+<li>Jokers after the player has discarded</li>
+<li>Multiple jokers in one turn (usually—check house rules)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Beginner Safety Rules for Dallas Mahjong</h3>
+<ol>
+<li><strong>Only swap on YOUR turn</strong> (after drawing, before discarding)</li>
+<li><strong>Announce the swap clearly</strong> ("Swapping for the 6 Crak joker")</li>
+<li><strong>Place the real tile where the joker was</strong></li>
+<li><strong>Take only one joker per turn</strong> (most tables)</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>Strategic Note:</h3>
+<p>Blanks/swapping speeds up the game. Players can get jokers mid-game, which increases surprise wins and changes defensive strategy.</p>
+<h3><span class="tile-icon">🀄</span>What Is Allowed vs. House Rules</h3>
+<div class="key-takeaway"><strong>Standard (most tables):</strong></div>
+<ul>
+<li>One swap per turn</li>
+<li>Must use the exact tile</li>
+<li>Announce before swapping</li>
+</ul>
+<div class="key-takeaway"><strong>House rules (vary by table):</strong></div>
+<ul>
+<li>Some allow swapping multiple jokers</li>
+<li>Some require payment for swaps</li>
+<li>Some don't allow swapping at all</li>
+</ul>
+<div class="key-takeaway"><strong>Always ask before the game starts:</strong> "Are we playing with swapping/blanks?"</div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-13-beginner-strategy-that-actually-works">
+<h2><span class="tile-icon">🀄</span>CHAPTER 13: BEGINNER STRATEGY THAT ACTUALLY WORKS</h2>
+<h3><span class="tile-icon">🀄</span>The FAST Framework</h3>
+<div class="key-takeaway"><strong>F - Find the easiest hand</strong></div>
+<p>Choose the hand that matches your current tiles, not the "coolest" hand on the card.</p>
+<div class="key-takeaway"><strong>A - Avoid dead tiles</strong></div>
+<p>Don't chase tiles nobody has discarded. If your suit is getting burned, pivot.</p>
+<div class="key-takeaway"><strong>S - Stay flexible</strong></div>
+<p>Keep 2 possible hands alive early. Don't commit until you have clear progress.</p>
+<div class="key-takeaway"><strong>T - Take progress</strong></div>
+<p>When exposing helps you finish and doesn't kill flexibility, do it.</p>
+<h3><span class="tile-icon">🀄</span>3 Beginner Hand Types to Target</h3>
+<div class="key-takeaway"><strong>1. One Suit + Honors</strong></div>
+<ul>
+<li>Example: All Dots + Dragons</li>
+<li>Easier because you're focused</li>
+<li>Fewer tile types to track</li>
+</ul>
+<div class="key-takeaway"><strong>2. Pairs-Heavy Hands</strong></div>
+<ul>
+<li>Hands with lots of pairs</li>
+<li>Easier to build (pairs are common)</li>
+<li>Less hunting for exact singles</li>
+</ul>
+<div class="key-takeaway"><strong>3. Any Like Numbers</strong></div>
+<ul>
+<li>Example: 5-5-5 (any suits), 7-7-7 (any suits)</li>
+<li>Flexible—can use dots, bams, or craks</li>
+<li>More tiles available to complete</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Hands to Avoid as a Beginner</h3>
+<ul>
+<li>Hands requiring 5+ exact singles</li>
+<li>Hands needing tiles you haven't seen</li>
+<li>Hands with complex requirements</li>
+<li>"Year" hands with unusual patterns</li>
+</ul>
+<div class="key-takeaway"><strong>Start simple. Win more.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-14-beginner-hand-selection">
+<h2><span class="tile-icon">🀄</span>CHAPTER 14: BEGINNER HAND SELECTION</h2>
+<h3><span class="tile-icon">🀄</span>After the Charleston, Ask:</h3>
+<ol>
+<li><strong>What suits do I have the most of?</strong></li>
+<li><strong>Do I have pairs or pungs already?</strong></li>
+<li><strong>Which hands match my tiles RIGHT NOW?</strong></li>
+<li><strong>Do I have jokers to help?</strong></li>
+</ol>
+<h3><span class="tile-icon">🀄</span>The Two-Hand Rule</h3>
+<p>Pick your <strong>primary hand</strong> (most likely) and a <strong>backup hand</strong> (Plan B).</p>
+<p>Stay flexible until you have clear progress toward one.</p>
+<h3><span class="tile-icon">🀄</span>When to Commit</h3>
+<p>Commit to a single hand when:</p>
+<ul>
+<li>You've completed 2+ melds</li>
+<li>You're drawing tiles that fit</li>
+<li>You have jokers in place</li>
+<li>You're close to finishing (3-4 tiles away)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>When to Pivot</h3>
+<p>Switch hands when:</p>
+<ul>
+<li>Your tiles aren't coming</li>
+<li>Someone exposed your needed tiles</li>
+<li>Your suit is getting discarded heavily</li>
+<li>You're stuck after 10+ turns</li>
+</ul>
+<div class="key-takeaway"><strong>Don't be stubborn. Winning players pivot.</strong></div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-15-charleston-strategy-beginner">
+<h2><span class="tile-icon">🀄</span>CHAPTER 15: CHARLESTON STRATEGY (BEGINNER)</h2>
+<h3><span class="tile-icon">🀄</span>Your Charleston Goals:</h3>
+<ol>
+<li><strong>Cleaner hand</strong> (fewer random tiles)</li>
+<li><strong>More pairs</strong> (building blocks)</li>
+<li><strong>Focused suits</strong> (1-2 suits, not all 3)</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>What to Pass (in order):</h3>
+<div class="key-takeaway"><strong>Pass 1 (Right):</strong></div>
+<ul>
+<li>Tiles from suits you're not using</li>
+<li>Isolated honors</li>
+</ul>
+<div class="key-takeaway"><strong>Pass 2 (Across):</strong></div>
+<ul>
+<li>More suit cleanup</li>
+<li>Tiles that don't fit top 2-3 hands</li>
+</ul>
+<div class="key-takeaway"><strong>Pass 3 (Left):</strong></div>
+<ul>
+<li>Final cleanup</li>
+<li>Anything clearly useless</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>What to ALWAYS Keep:</h3>
+<ul>
+<li><strong>Jokers</strong> (never pass these)</li>
+<li><strong>Pairs</strong> (2 identical tiles)</li>
+<li><strong>Pungs</strong> (3 identical tiles)</li>
+<li>Tiles that fit your strongest 2 hands</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Don't Overthink It</h3>
+<p>The Charleston isn't about predicting the whole game. It's about <strong>reducing chaos and creating options.</strong></p>
+<div class="key-takeaway"><strong>Beginner rule:</strong> If you're not sure, pass it.</div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-16-joker-discipline-beginner">
+<h2><span class="tile-icon">🀄</span>CHAPTER 16: JOKER DISCIPLINE (BEGINNER)</h2>
+<h3><span class="tile-icon">🀄</span>Rule #1: Keep Jokers Through Charleston</h3>
+<p>Never pass jokers. Ever. They're gold.</p>
+<h3><span class="tile-icon">🀄</span>Rule #2: Use Jokers for Hard-to-Get Tiles</h3>
+<p>Use jokers to complete:</p>
+<ul>
+<li>Pungs you're unlikely to finish naturally</li>
+<li>Kongs</li>
+<li>Critical parts of runs</li>
+</ul>
+<p>Don't use them on tiles that are being discarded freely.</p>
+<h3><span class="tile-icon">🀄</span>Rule #3: Don't Expose Joker Melds Too Early</h3>
+<p>If you expose a meld with a joker, opponents can swap it out (Dallas rules).</p>
+<p>Wait until you're close to winning before exposing joker-heavy melds.</p>
+<h3><span class="tile-icon">🀄</span>How Many Jokers Is Good?</h3>
+<ul>
+<li><strong>0 jokers:</strong> Tough but doable</li>
+<li><strong>1-2 jokers:</strong> Standard, use wisely</li>
+<li><strong>3+ jokers:</strong> Powerful—lean into faster hands</li>
+</ul>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-17-defense-for-beginners">
+<h2><span class="tile-icon">🀄</span>CHAPTER 17: DEFENSE FOR BEGINNERS</h2>
+<h3><span class="tile-icon">🀄</span>The #1 Defensive Rule:</h3>
+<div class="key-takeaway"><strong>Don't feed wins.</strong></div>
+<p>If someone is exposed and close, play carefully.</p>
+<h3><span class="tile-icon">🀄</span>How to Spot Danger:</h3>
+<div class="key-takeaway"><strong>Player is dangerous if:</strong></div>
+<ul>
+<li>They have 2-3 exposures showing</li>
+<li>They're calling tiles quickly</li>
+<li>They look focused/confident</li>
+<li>They have jokers exposed</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Safe-ish Discards:</h3>
+<p>When someone looks close:</p>
+<ul>
+<li>Discard tiles already heavily thrown</li>
+<li>Discard tiles that don't match their exposures</li>
+<li>Avoid tiles in their "range"</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Example:</h3>
+<p>Opponent exposed: <strong>3-3-3 Bams</strong> and <strong>Red Dragon-Red Dragon-Joker</strong></p>
+<div class="key-takeaway"><strong>Danger tiles:</strong></div>
+<ul>
+<li>Other Bams (they might need runs)</li>
+<li>Dragons (they might need more)</li>
+</ul>
+<div class="key-takeaway"><strong>Safer tiles:</strong></div>
+<ul>
+<li>Dots or Craks</li>
+<li>Tiles already discarded 3+ times</li>
+</ul>
+<div class="key-takeaway"><strong>Beginner rule:</strong> When in doubt, discard what's already been thrown.</div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-18-when-to-pivot-vs-when-to-commit">
+<h2><span class="tile-icon">🀄</span>CHAPTER 18: WHEN TO PIVOT VS. WHEN TO COMMIT</h2>
+<h3><span class="tile-icon">🀄</span>Pivot Triggers (Change Hands):</h3>
+<ol>
+<li><strong>No progress after Charleston + 8 draws</strong></li>
+<li><strong>Your needed tiles are being discarded</strong></li>
+<li><strong>Two players exposed in your tiles</strong></li>
+<li><strong>You need 4+ exact tiles you haven't seen</strong></li>
+</ol>
+<h3><span class="tile-icon">🀄</span>Commit Triggers (Stick with Hand):</h3>
+<ol>
+<li><strong>You have 2+ complete melds</strong></li>
+<li><strong>You're 3-4 tiles from winning</strong></li>
+<li><strong>You have jokers supporting the hand</strong></li>
+<li><strong>Your tiles are coming regularly</strong></li>
+</ol>
+<h3><span class="tile-icon">🀄</span>The Sunk Cost Trap</h3>
+<div class="key-takeaway"><strong>Mistake:</strong> "I've been building this hand for 10 turns, I can't switch now!"</div>
+<div class="key-takeaway"><strong>Reality:</strong> Those turns are gone. What matters is: <strong>Can I win from here?</strong></div>
+<p>If no, switch hands.</p>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-19-your-first-game-checklist">
+<h2><span class="tile-icon">🀄</span>CHAPTER 19: YOUR FIRST GAME CHECKLIST</h2>
+<h3><span class="tile-icon">🀄</span>Before You Start:</h3>
+<ul>
+<li>☐ Set up tiles and walls correctly</li>
+<li>☐ Each player has a card</li>
+<li>☐ Confirm if playing with blanks/swapping</li>
+<li>☐ Know who is East (dealer)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>During Charleston:</h3>
+<ul>
+<li>☐ Keep jokers</li>
+<li>☐ Pass unusable tiles</li>
+<li>☐ Stay calm (it's just passing!)</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>During Play:</h3>
+<ul>
+<li>☐ Choose 1-2 possible hands</li>
+<li>☐ Organize tiles by suit on rack</li>
+<li>☐ Announce discards clearly</li>
+<li>☐ Watch for dangerous players</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>When Calling/Exposing:</h3>
+<ul>
+<li>☐ Make sure the tile helps</li>
+<li>☐ Show the meld clearly</li>
+<li>☐ Discard after calling</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Before Calling Mahjong:</h3>
+<ul>
+<li>☐ Double-check you have all tiles</li>
+<li>☐ Verify it matches a card hand</li>
+<li>☐ Count tiles (should be 14)</li>
+</ul>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-20-common-beginner-mistakes-and-the-fix">
+<h2><span class="tile-icon">🀄</span>CHAPTER 20: COMMON BEGINNER MISTAKES (AND THE FIX)</h2>
+<h3><span class="tile-icon">🀄</span>Mistake #1: Passing Jokers in Charleston</h3>
+<div class="key-takeaway"><strong>Fix:</strong> NEVER pass jokers. Keep them always.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #2: Choosing the "Pretty" Hand</h3>
+<div class="key-takeaway"><strong>Fix:</strong> Choose the hand your tiles support NOW.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #3: Exposing Too Early</h3>
+<div class="key-takeaway"><strong>Fix:</strong> Only expose when you're close and confident.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #4: Not Pivoting</h3>
+<div class="key-takeaway"><strong>Fix:</strong> If your hand isn't working after 10 turns, switch.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #5: Feeding Wins</h3>
+<div class="key-takeaway"><strong>Fix:</strong> Watch exposed players and avoid their tiles.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #6: Using Jokers for Pairs</h3>
+<div class="key-takeaway"><strong>Fix:</strong> Jokers only work in pungs, kongs, and runs.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #7: Holding Too Many Suits</h3>
+<div class="key-takeaway"><strong>Fix:</strong> Focus on 1-2 suits max.</div>
+<h3><span class="tile-icon">🀄</span>Mistake #8: Rushing</h3>
+<div class="key-takeaway"><strong>Fix:</strong> Take your time. Think before each discard.</div>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-21-quick-reference-pages">
+<h2><span class="tile-icon">🀄</span>CHAPTER 21: QUICK REFERENCE PAGES</h2>
+<h3><span class="tile-icon">🀄</span>Turn Checklist</h3>
+<p>Every turn:</p>
+<ol>
+<li>Draw a tile (or call a discard)</li>
+<li>Evaluate: Does this help my hand?</li>
+<li>Discard a tile you don't need</li>
+<li>Announce it clearly</li>
+</ol>
+<h3><span class="tile-icon">🀄</span>Charleston Cheat Sheet</h3>
+<ul>
+<li><strong>Pass Right:</strong> Get rid of worst tiles</li>
+<li><strong>Pass Across:</strong> Continue cleanup</li>
+<li><strong>Pass Left:</strong> Final refinement</li>
+<li><strong>Keep:</strong> Jokers, pairs, pungs</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>"Can I Use a Joker Here?" Cheat Sheet</h3>
+<ul>
+<li>Pair? <strong>NO</strong></li>
+<li>Pung? <strong>YES</strong></li>
+<li>Kong? <strong>YES</strong></li>
+<li>Run (3+ sequence)? <strong>YES</strong></li>
+<li>Single tile? <strong>NO</strong></li>
+<li>Flower? <strong>NO</strong></li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Hand Selection Flowchart</h3>
+<ol>
+<li>What suits do I have most of?</li>
+<li>Do I have pairs/pungs already?</li>
+<li>Which card hands match this?</li>
+<li>Pick top 2 hands</li>
+<li>Stay flexible until clear progress</li>
+</ol>
+<hr class="divider" />
+</section>
+<section class="chapter" id="chapter-22-bonus-worksheet-my-first-5-games-tracker">
+<h2><span class="tile-icon">🀄</span>CHAPTER 22: BONUS WORKSHEET - MY FIRST 5 GAMES TRACKER</h2>
+<p>Use this to improve quickly!</p>
+<h3><span class="tile-icon">🀄</span>Game 1:</h3>
+<ul>
+<li><strong>Hand I chose:</strong> _____________</li>
+<li><strong>When I committed:</strong> _____________</li>
+<li><strong>Did I expose? (Y/N):</strong> _____________</li>
+<li><strong>Did I pivot? (Y/N):</strong> _____________</li>
+<li><strong>Who won?</strong> _____________</li>
+<li><strong>What I learned:</strong> _____________</li>
+</ul>
+<h3><span class="tile-icon">🀄</span>Game 2:</h3>
+<ul>
+<li><strong>Hand I chose:</strong> _____________</li>
+<li><strong>When I committed:</strong> _____________</li>
+<li><strong>Did I expose? (Y/N):</strong> _____________</li>
+<li><strong>Did I pivot? (Y/N):</strong> _____________</li>
+<li><strong>Who won?</strong> _____________</li>
+<li><strong>What I learned:</strong> _____________</li>
+</ul>
+<p>(Repeat for Games 3, 4, 5)</p>
+<h3><span class="tile-icon">🀄</span>After 5 Games - Reflection:</h3>
+<ul>
+<li>What hands worked well for me?</li>
+<li>What mistakes did I make repeatedly?</li>
+<li>What do I need to practice?</li>
+</ul>
+<hr class="divider" />
+</section>
+<section class="chapter" id="congratulations">
+<h2><span class="tile-icon">🀄</span>CONGRATULATIONS!</h2>
+<p>You now have everything you need to play American Mahjong confidently.</p>
+<div class="key-takeaway"><strong>Next Steps:</strong></div>
+<ol>
+<li><strong>Practice!</strong> Play 10-20 games to internalize the rules</li>
+<li><strong>Review this guide</strong> between games</li>
+<li><strong>Use the cheat sheets</strong> at the table</li>
+<li><strong>Track your progress</strong> with the worksheet</li>
+</ol>
+<hr class="divider" />
+</section>
+<section class="chapter" id="ready-to-win-more">
+<h2><span class="tile-icon">🀄</span>READY TO WIN MORE?</h2>
+<p>Once you're comfortable with the basics and have played 10-20 games, it's time to level up your strategy.</p>
+<h3><span class="tile-icon">🀄</span>👉 <strong>Get Mahjong 201: The Consistency Playbook</strong></h3>
+<p>Learn the SCAN-SHAPE-COMMIT-DEFEND framework that intermediate players use to win consistently—without relying on luck.</p>
+<div class="key-takeaway"><strong>What you'll master:</strong></div>
+<ul>
+<li>Advanced hand selection</li>
+<li>When to expose vs. stay concealed</li>
+<li>Table reading &amp; opponent tells</li>
+<li>Joker management strategies</li>
+<li>30+ intermediate rules of thumb</li>
+<li>Real-game scenarios with solutions</li>
+</ul>
+<div class="key-takeaway"><strong>Visit MahjongMastery.com to continue your journey!</strong></div>
+<hr class="divider" />
+<div class="key-takeaway"><strong>Happy Playing!</strong></div>
+<p>© 2026 MahjongMastery • www.MahjongMastery.com</p>
+</section>
+
+  </section>
+
+  <footer class="footer">© 2026 MahjongMastery • www.MahjongMastery.com • Page <span class="page-number"></span></footer>
+</body>
+</html>
