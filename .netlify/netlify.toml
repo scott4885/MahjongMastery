@@ -10,6 +10,9 @@ publishOrigin = "ui"
 functions = "/home/scott/.openclaw/workspace/MahjongMastery/netlify/functions"
 
 [build.environment]
+NODE_VERSION = "18"
+MAILCHIMP_LIST_ID = "1cc11f7750"
+MAILCHIMP_SERVER = "us13"
 
 [build.processing]
 
@@ -26,6 +29,18 @@ functions = "/home/scott/.openclaw/workspace/MahjongMastery/netlify/functions"
 [functions]
 
 [functions."*"]
+
+[[redirects]]
+from = "/api/create-checkout-session"
+to = "/.netlify/functions/create-checkout-session"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
 
 [[redirects]]
 from = "/api/*"

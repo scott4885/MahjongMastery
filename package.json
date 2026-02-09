@@ -1,0 +1,24 @@
+{
+  "name": "mahjongmastery",
+  "version": "1.0.0",
+  "description": "Master Mahjong - Tips and Strategies for winning more lines - Beginner to Advanced",
+  "main": "generate_courses.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scott4885/MahjongMastery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/scott4885/MahjongMastery/issues"
+  },
+  "homepage": "https://github.com/scott4885/MahjongMastery#readme",
+  "dependencies": {
+    "stripe": "^20.3.1"
+  }
+}
