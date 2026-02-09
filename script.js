@@ -16,6 +16,11 @@ leadForm.addEventListener("submit", async (event) => {
       throw new Error("Subscribe failed");
     }
 
+    // Track lead conversion in Facebook Pixel
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead');
+    }
+
     window.location.href = "/courses/free-tile-guide.html";
     return;
   } catch (error) {
