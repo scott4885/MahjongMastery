@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahjong Mastery Admin</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        padding: 2rem;
+        background: #0f1012;
+        color: #f5f5f5;
+      }
+      h1 {
+        margin-bottom: 1rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 2rem;
+      }
+      th,
+      td {
+        border-bottom: 1px solid #2a2d33;
+        padding: 0.75rem;
+        text-align: left;
+      }
+      th {
+        color: #a0aec0;
+        font-weight: 600;
+      }
+      .error {
+        color: #f56565;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mahjong Mastery Admin</h1>
+    <p id="status">Loading data…</p>
+
+    <section>
+      <h2>Subscribers</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Source</th>
+            <th>Created</th>
+          </tr>
+        </thead>
+        <tbody id="subscribers"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Recent Purchases</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Customer Email</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Created</th>
+          </tr>
+        </thead>
+        <tbody id="purchases"></tbody>
+      </table>
+    </section>
+
+    <script>
+      const password = prompt("Admin password:");
+      const statusEl = document.getElementById("status");
+
+      if (password !== "mahjongadmin") {
+        statusEl.textContent = "Access denied.";
+        statusEl.classList.add("error");
+        throw new Error("Unauthorized");
+      }
+
+      const formatMoney = (amount, currency) => {
+        if (amount == null || !currency) return "—";
+        return new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: currency.toUpperCase(),
+        }).format(amount / 100);
+      };
+
+      fetch("/api/admin-data")
+        .then((response) => response.json())
+        .then((data) => {
+          statusEl.textContent = "";
+          const subscribersBody = document.getElementById("subscribers");
+          const purchasesBody = document.getElementById("purchases");
+
+          if (!data.subscribers.length) {
+            subscribersBody.innerHTML = '<tr><td colspan="3">No subscribers yet.</td></tr>';
+          } else {
+            subscribersBody.innerHTML = data.subscribers
+              .map(
+                (subscriber) => `
+                <tr>
+                  <td>${subscriber.email}</td>
+                  <td>${subscriber.source || "—"}</td>
+                  <td>${subscriber.createdAt ? new Date(subscriber.createdAt).toLocaleString() : "—"}</td>
+                </tr>
+              `
+              )
+              .join("");
+          }
+
+          if (!data.purchases.length) {
+            purchasesBody.innerHTML = '<tr><td colspan="4">No purchases yet.</td></tr>';
+          } else {
+            purchasesBody.innerHTML = data.purchases
+              .map(
+                (purchase) => `
+                <tr>
+                  <td>${purchase.customerEmail || "—"}</td>
+                  <td>${formatMoney(purchase.amountTotal, purchase.currency)}</td>
+                  <td>${purchase.paymentStatus || "—"}</td>
+                  <td>${purchase.createdAt ? new Date(purchase.createdAt).toLocaleString() : "—"}</td>
+                </tr>
+              `
+              )
+              .join("");
+          }
+        })
+        .catch((error) => {
+          console.error("Admin data error:", error);
+          statusEl.textContent = "Failed to load data.";
+          statusEl.classList.add("error");
+        });
+    </script>
+  </body>
+</html>

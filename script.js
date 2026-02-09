@@ -1,11 +1,27 @@
 const leadForm = document.getElementById("leadForm");
 const toast = document.getElementById("toast");
 
-leadForm.addEventListener("submit", (event) => {
+leadForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const email = event.target.email.value;
-  console.log("Lead capture:", email);
-  toast.textContent = "Thanks! Check your inbox for the free guide.";
+
+  try {
+    const response = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, source: "lead_form" }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Subscribe failed");
+    }
+
+    toast.textContent = "Thanks! Check your inbox for the free guide.";
+  } catch (error) {
+    console.error("Lead capture error:", error);
+    toast.textContent = "Oops! Please try again in a moment.";
+  }
+
   toast.classList.add("show");
   setTimeout(() => toast.classList.remove("show"), 3500);
   event.target.reset();
