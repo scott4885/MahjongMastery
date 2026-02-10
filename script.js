@@ -1,7 +1,14 @@
 const leadForm = document.getElementById("leadForm");
 const toast = document.getElementById("toast");
 
-leadForm.addEventListener("submit", async (event) => {
+const showToast = (message) => {
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 3500);
+};
+
+if (leadForm) leadForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const email = event.target.email.value;
 
@@ -25,11 +32,9 @@ leadForm.addEventListener("submit", async (event) => {
     return;
   } catch (error) {
     console.error("Lead capture error:", error);
-    toast.textContent = "Oops! Please try again in a moment.";
+    showToast("Oops! Please try again in a moment.");
   }
 
-  toast.classList.add("show");
-  setTimeout(() => toast.classList.remove("show"), 3500);
   event.target.reset();
 });
 
@@ -42,9 +47,7 @@ buttons.forEach((button) => {
 
     if (productId === "price_free_tile_guide") {
       console.log("Free download requested:", courseName);
-      toast.textContent = "Check your inbox for the free guide!";
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 3500);
+      showToast("Check your inbox for the free guide!");
       return;
     }
 
@@ -88,3 +91,17 @@ document.querySelectorAll(".section, .hero, .trust-strip").forEach((section) => 
   section.classList.add("fade-in");
   observer.observe(section);
 });
+
+const floatingCta = document.querySelector('.floating-cta');
+if (floatingCta) {
+  const toggleFloating = () => {
+    if (window.scrollY > 420) {
+      floatingCta.classList.add('show');
+    } else {
+      floatingCta.classList.remove('show');
+    }
+  };
+
+  window.addEventListener('scroll', toggleFloating);
+  toggleFloating();
+}

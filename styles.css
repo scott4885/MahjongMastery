@@ -21,14 +21,15 @@
 }
 
 body {
-  font-family: "Open Sans", "Lato", sans-serif;
+  font-family: "Inter", "Open Sans", sans-serif;
   font-size: 18px;
-  background: linear-gradient(180deg, var(--cream), var(--cream-2));
-  color: var(--text);
-  line-height: 1.7;
-  background-image: url("images/patterns/bamboo-pattern.svg");
+  background-color: var(--cream);
+  background-image: linear-gradient(180deg, rgba(250, 247, 242, 0.96), rgba(255, 248, 240, 0.96)), url("images/patterns/bamboo-pattern.svg");
   background-repeat: repeat;
   background-size: 320px;
+  background-blend-mode: soft-light;
+  color: var(--text);
+  line-height: 1.7;
 }
 
 img {
@@ -42,7 +43,7 @@ a {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   color: var(--text);
 }
 
@@ -127,8 +128,38 @@ h2 {
 
 .subhead {
   color: var(--text-soft);
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
   font-size: 1.1rem;
+}
+
+.urgency-note {
+  font-weight: 600;
+  color: var(--terracotta);
+  margin-bottom: 1.6rem;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.trust-badges span {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(212, 165, 116, 0.35);
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
 }
 
 .hero-cta {
@@ -326,6 +357,34 @@ h2 {
   transform: translateY(-6px);
 }
 
+.course-card.bundle {
+  background: linear-gradient(160deg, rgba(244, 222, 216, 0.7), rgba(184, 201, 176, 0.6));
+}
+
+.bundle-badge {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  background: var(--terracotta);
+  color: var(--white);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.price-note {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-left: 0.4rem;
+}
+
+.microcopy {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
 .course-cover {
   background: linear-gradient(120deg, rgba(244, 222, 216, 0.6), rgba(184, 201, 176, 0.45));
   padding: 1.2rem;
@@ -468,6 +527,12 @@ h2 {
   flex-wrap: wrap;
 }
 
+.guarantee {
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--terracotta);
+}
+
 .site-footer {
   padding: 3rem 0;
   border-top: 1px solid rgba(212, 165, 116, 0.3);
@@ -547,6 +612,30 @@ h2 {
   transform: translateY(0);
 }
 
+.floating-cta {
+  position: fixed;
+  bottom: 1.4rem;
+  right: 1.4rem;
+  z-index: 20;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  background: var(--terracotta);
+  color: var(--white);
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 16px 30px rgba(91, 76, 64, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.floating-cta.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -556,6 +645,18 @@ h2 {
 .fade-in.in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .floating-cta {
+    bottom: 1rem;
+    right: 1rem;
+  }
 }
 
 @media (max-width: 900px) {
@@ -580,5 +681,18 @@ h2 {
 
   .hero-cta {
     padding: 1.2rem;
+  }
+
+  .cta-buttons {
+    width: 100%;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .trust-badges {
+    font-size: 0.85rem;
   }
 }

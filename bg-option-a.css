@@ -1,0 +1,10 @@
+/* Option A: Subtle tile pattern (very faint, better readability) */
+body {
+  background-color: #faf7f2;
+  background-image:
+    linear-gradient(180deg, rgba(250, 247, 242, 0.98), rgba(255, 248, 240, 0.98)),
+    url("images/patterns/bamboo-pattern.svg");
+  background-repeat: repeat;
+  background-size: 420px;
+  background-blend-mode: soft-light;
+}
