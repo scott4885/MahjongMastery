@@ -8,6 +8,32 @@
   MAILCHIMP_LIST_ID = "1cc11f7750"
   MAILCHIMP_SERVER = "us13"
 
+# Block direct access to paid course files — redirect to sales page
+# Actual course content is served from /courses/dl/ after purchase
+[[redirects]]
+  from = "/courses/mahjong-101.html"
+  to = "/#mahjong-101"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/courses/winning-quick.html"
+  to = "/#winning-quick"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/courses/mahjong-201.html"
+  to = "/#mahjong-201"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/courses/mahjong-301.html"
+  to = "/#mahjong-301"
+  status = 302
+  force = true
+
 [[redirects]]
   from = "/api/create-checkout-session"
   to = "/.netlify/functions/create-checkout-session"

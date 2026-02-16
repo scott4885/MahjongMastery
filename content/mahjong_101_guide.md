@@ -942,10 +942,10 @@ Learn the SCAN-SHAPE-COMMIT-DEFEND framework that intermediate players use to wi
 - 30+ intermediate rules of thumb
 - Real-game scenarios with solutions
 
-**Visit MahjongMastery.com to continue your journey!**
+**Visit winningatmahjong.shop to continue your journey!**
 
 ---
 
 **Happy Playing!**
 
-© 2026 MahjongMastery • www.MahjongMastery.com
+© 2026 Mahjong Mastery • www.winningatmahjong.shop

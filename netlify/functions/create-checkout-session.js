@@ -42,7 +42,7 @@ exports.handler = async (event) => {
     }
 
     const stripe = new Stripe(stripeKey);
-    const origin = event.headers.origin || "https://mahjongmastery.com";
+    const origin = event.headers.origin || "https://winningatmahjong.shop";
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",

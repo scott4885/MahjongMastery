@@ -24,10 +24,8 @@ body {
   font-family: "Inter", "Open Sans", sans-serif;
   font-size: 18px;
   background-color: var(--cream);
-  background-image: linear-gradient(180deg, rgba(250, 247, 242, 0.96), rgba(255, 248, 240, 0.96)), url("images/patterns/bamboo-pattern.svg");
-  background-repeat: repeat;
-  background-size: 320px;
-  background-blend-mode: soft-light;
+  background-image: linear-gradient(160deg, #faf7f2 0%, #fff8f0 40%, #f4ede4 70%, #faf7f2 100%);
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.7;
 }
@@ -647,6 +645,102 @@ h2 {
   transform: translateY(0);
 }
 
+/* Hamburger button */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile nav overlay */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(250, 247, 242, 0.98);
+    backdrop-filter: blur(12px);
+    padding: 1rem 1.5rem 1.5rem;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+    box-shadow: 0 8px 20px rgba(91, 76, 64, 0.1);
+    gap: 0;
+    z-index: 100;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+    font-size: 1.05rem;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-actions .tile-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .site-header {
+    position: sticky;
+  }
+
+  .hero {
+    padding-top: 3.5rem;
+  }
+
+  .hero-badge {
+    position: static;
+    margin-top: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .fade-in {
     opacity: 1;
@@ -657,20 +751,44 @@ h2 {
     bottom: 1rem;
     right: 1rem;
   }
-}
 
-@media (max-width: 900px) {
-  .nav-links {
-    display: none;
+  /* Force course grid to single column on mobile */
+  .course-grid {
+    grid-template-columns: 1fr;
   }
 
-  .hero {
-    padding-top: 3.5rem;
+  .course-card.highlight {
+    transform: none;
   }
 
-  .hero-badge {
-    position: static;
-    margin-top: 1rem;
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .urgency-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.4rem;
+  }
+
+  .section {
+    padding: 3rem 0;
   }
 }
 
@@ -694,5 +812,33 @@ h2 {
 
   .trust-badges {
     font-size: 0.85rem;
+  }
+
+  .btn {
+    padding: 0.9rem 1.2rem;
+    min-height: 44px;
+  }
+
+  .course-footer {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: stretch;
+  }
+
+  .course-footer .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+
+  .container {
+    width: min(1200px, 90%);
   }
 }

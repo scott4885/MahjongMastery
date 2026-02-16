@@ -1326,7 +1326,7 @@ Thank you for investing in your Mahjong mastery. These guides represent years of
 ## RESOURCES & SUPPORT
 
 **Need help or have questions?**
-- Email: support@mahjongmastery.com
+- Email: winningatmahjong@gmail.com
 - Community: Visit our website for forums and discussion
 
 **Want more?**
@@ -1335,13 +1335,13 @@ Thank you for investing in your Mahjong mastery. These guides represent years of
 - Tournament prep guides
 - Custom strategy consultations
 
-**Visit MahjongMastery.com for updates!**
+**Visit winningatmahjong.shop for updates!**
 
 ---
 
 **Happy Playing—and Happy Winning!**
 
-© 2026 MahjongMastery • www.MahjongMastery.com
+© 2026 Mahjong Mastery • www.winningatmahjong.shop
 
 ---
 
@@ -1412,4 +1412,4 @@ Thank you for investing in your Mahjong mastery. These guides represent years of
 
 **See you at the table—and in the winner's circle.**
 
-© 2026 MahjongMastery • www.MahjongMastery.com
+© 2026 Mahjong Mastery • www.winningatmahjong.shop

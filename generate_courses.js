@@ -492,7 +492,7 @@ function renderHtml({ title, subtitle, tagline, toc, content, price }) {
     ${content}
   </section>
 
-  <footer class="footer">© 2026 MahjongMastery • www.MahjongMastery.com • Page <span class="page-number"></span></footer>
+  <footer class="footer">© 2026 Mahjong Mastery • winningatmahjong.shop • Page <span class="page-number"></span></footer>
 </body>
 </html>`;
 }

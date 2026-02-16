@@ -63,7 +63,7 @@ git push origin main
 
 ### Step 5: (Optional) Add Custom Domain
 
-If you want a custom domain (like `mahjongmastery.com`):
+If you want a custom domain (like `winningatmahjong.shop`):
 
 1. Buy domain from Namecheap, Google Domains, or GoDaddy
 2. In GitHub Settings → Pages, add custom domain
@@ -244,7 +244,7 @@ Questions? Reply to this email anytime.
 Happy playing!
 
 The MahjongMastery Team
-www.mahjongmastery.com
+winningatmahjong.shop
 ```
 
 7. Save and activate automation
@@ -351,8 +351,8 @@ Create a simple thank-you page on your GitHub site.
         <h1>Thank You for Your Purchase!</h1>
         <p><strong>Check your email inbox</strong> (and spam folder) in the next 2-3 minutes.</p>
         <p>Your guide(s) will be delivered via email with instant download links.</p>
-        <p style="margin-top: 30px;">Questions? Email us at: <strong>support@mahjongmastery.com</strong></p>
-        <p style="margin-top: 30px;"><a href="/" style="color: #c9a68a; text-decoration: none;">← Back to MahjongMastery.com</a></p>
+        <p style="margin-top: 30px;">Questions? Email us at: <strong>winningatmahjong@gmail.com</strong></p>
+        <p style="margin-top: 30px;"><a href="/" style="color: #c9a68a; text-decoration: none;">← Back to winningatmahjong.shop</a></p>
     </div>
 </body>
 </html>

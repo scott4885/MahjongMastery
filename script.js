@@ -1,3 +1,23 @@
+// Hamburger menu toggle
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    hamburger.classList.toggle("active");
+    hamburger.setAttribute("aria-expanded", isOpen);
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
 const leadForm = document.getElementById("leadForm");
 const toast = document.getElementById("toast");
 
@@ -6,6 +26,17 @@ const showToast = (message) => {
   toast.textContent = message;
   toast.classList.add("show");
   setTimeout(() => toast.classList.remove("show"), 3500);
+};
+
+const focusLeadForm = (message) => {
+  if (!leadForm) return;
+  leadForm.scrollIntoView({ behavior: "smooth", block: "center" });
+  const emailInput = leadForm.querySelector('input[type="email"]');
+  if (emailInput) {
+    emailInput.focus();
+    emailInput.select();
+  }
+  if (message) showToast(message);
 };
 
 if (leadForm) leadForm.addEventListener("submit", async (event) => {
@@ -47,7 +78,7 @@ buttons.forEach((button) => {
 
     if (productId === "price_free_tile_guide") {
       console.log("Free download requested:", courseName);
-      showToast("Check your inbox for the free guide!");
+      focusLeadForm("Enter your email above to get the free guide!");
       return;
     }
 

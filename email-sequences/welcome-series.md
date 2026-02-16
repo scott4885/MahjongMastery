@@ -24,7 +24,7 @@ Quick question: do you decide on a hand too late? That’s the #1 mistake I see 
 
 If you wait too long to commit, you miss easy tiles and fall into “almost” hands. In Mahjong 101, I show you how to spot the best path early and stick to it.
 
-**CTA:** Learn the fix in Mahjong 101 ($37)
+**CTA:** Learn the fix in Mahjong 101 ($37): https://winningatmahjong.shop/#mahjong-101
 
 — The Mahjong Mastery team at winningatmahjong.shop
 
@@ -44,7 +44,7 @@ Here are 5 quick wins you can use right away:
 
 These are pulled from the Winning Quick guide, and they make a real difference. If you want the full playbook, it’s waiting for you.
 
-**CTA:** Get the full Winning Quick guide ($27)
+**CTA:** Get the full Winning Quick guide ($27): https://winningatmahjong.shop/#winning-quick
 
 — The Mahjong Mastery team at winningatmahjong.shop
 
@@ -59,7 +59,7 @@ Unsubscribe: *|UNSUB|*
 
 Two weeks later she was calling her hand early, playing with confidence, and winning consistently. That can be you too.
 
-**CTA:** Start with Mahjong 101 ($37)
+**CTA:** Start with Mahjong 101 ($37): https://winningatmahjong.shop/#mahjong-101
 
 — The Mahjong Mastery team at winningatmahjong.shop
 
@@ -81,9 +81,9 @@ Quick quiz — which player are you today?
 Pick your path now so your next game feels calm and confident. Spots and energy are always limited — don’t wait too long.
 
 **CTA:**
-- Mahjong 101 ($37): https://winningatmahjong.shop/courses/mahjong-101.html
-- Winning Quick ($27): https://winningatmahjong.shop/courses/winning-quick.html
-- Mahjong Mastery (full): https://winningatmahjong.shop/courses/mahjong-mastery.html
+- Mahjong 101 ($37): https://winningatmahjong.shop/#mahjong-101
+- Winning Quick ($27): https://winningatmahjong.shop/#winning-quick
+- All Courses Bundle: https://winningatmahjong.shop/#bundle
 
 — The Mahjong Mastery team at winningatmahjong.shop
 

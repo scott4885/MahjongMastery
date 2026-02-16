@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; width:1080px; height:1080px; background: transparent; }
+  canvas { display:block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1080"></canvas>
+<script>
+const cfg = {"filename": "11-winds-dragons-tip.png", "bg": "#FF1493", "textColor": "#FFFFFF", "lines": ["WINDS & DRAGONS TIP", "Don't hoard them all!", "Pick ONE direction", "+ matching dragons"], "fontSizes": [80, 64, 64, 64], "emoji": "\ud83c\udc04", "emojiSize": 70, "accent": null};
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+
+function drawTileBorder() {
+  const tile = '🀄';
+  ctx.font = '48px Montserrat, sans-serif';
+  ctx.fillStyle = 'rgba(245,241,232,0.9)';
+  const step = 90;
+  for (let x = 40; x <= 1040; x += step) {
+    ctx.fillText(tile, x, 70);
+    ctx.fillText(tile, x, 1060);
+  }
+  for (let y = 140; y <= 980; y += step) {
+    ctx.fillText(tile, 20, y);
+    ctx.fillText(tile, 1030, y);
+  }
+}
+
+function drawAccentLine(y, color) {
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 10;
+  ctx.lineCap = 'round';
+  ctx.beginPath();
+  ctx.moveTo(360, y);
+  ctx.lineTo(720, y);
+  ctx.stroke();
+}
+
+function drawCenteredText(lines, sizes, color, yStart) {
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = color;
+  let y = yStart;
+  for (let i = 0; i < lines.length; i++) {
+    const size = sizes[i] || sizes[sizes.length - 1];
+    ctx.font = `700 ${size}px Montserrat, sans-serif`;
+    ctx.fillText(lines[i], 540, y);
+    y += size + 20;
+  }
+}
+
+function drawWatermark(color='rgba(255,255,255,0.6)') {
+  ctx.font = '32px Montserrat, sans-serif';
+  ctx.textAlign = 'right';
+  ctx.textBaseline = 'alphabetic';
+  ctx.fillStyle = color;
+  ctx.fillText('winningatmahjong.shop', 1030, 1030);
+}
+
+function draw() {
+  // Background
+  ctx.fillStyle = cfg.bg;
+  ctx.fillRect(0,0,1080,1080);
+
+  if (cfg.square) {
+    ctx.fillStyle = cfg.accent;
+    ctx.fillRect(190,190,700,700);
+  }
+
+  if (cfg.accent === 'tile-border') {
+    drawTileBorder();
+  }
+
+  // Main Text
+  const totalHeight = cfg.fontSizes.reduce((a,b)=>a+b,0) + (cfg.lines.length-1)*20;
+  const yStart = (1080 - totalHeight)/2 + cfg.fontSizes[0]/2;
+  drawCenteredText(cfg.lines, cfg.fontSizes, cfg.textColor, yStart);
+
+  // Accents
+  if (cfg.accent && cfg.accent.startsWith('#') && !cfg.square) {
+    drawAccentLine(720, cfg.accent);
+  }
+
+  if (cfg.emoji) {
+    ctx.font = `${cfg.emojiSize}px Montserrat, sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillText(cfg.emoji, 540, 880);
+  }
+
+  // Small accent tile
+  if (cfg.accent === '🀄' || cfg.accent === null) {
+    ctx.font = '60px Montserrat, sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.8)';
+    ctx.fillText('🀄', 120, 120);
+  }
+
+  // Watermark
+  const wmColor = (cfg.bg === '#FFD700') ? 'rgba(43,43,43,0.6)' : 'rgba(255,255,255,0.6)';
+  drawWatermark(wmColor);
+}
+
+document.fonts.ready.then(draw);
+</script>
+</body>
+</html>

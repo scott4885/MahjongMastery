@@ -494,7 +494,7 @@ Learn the complete rules, setup, Charleston strategy, and beginner winning tacti
 - Beginner-friendly hand selection
 - Quick reference cheat sheets
 
-**Visit MahjongMastery.com to get started!**
+**Visit winningatmahjong.shop to get started!**
 
 ---
 
@@ -533,4 +533,4 @@ Learn the complete rules, setup, Charleston strategy, and beginner winning tacti
 
 **Happy Playing!**
 
-© 2026 MahjongMastery • www.MahjongMastery.com
+© 2026 Mahjong Mastery • www.winningatmahjong.shop

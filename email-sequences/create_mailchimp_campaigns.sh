@@ -20,7 +20,7 @@ create_campaign() {
     "subject_line": "${subject}",
     "title": "${title}",
     "from_name": "Mahjong Mastery",
-    "reply_to": "support@winningatmahjong.shop"
+    "reply_to": "winningatmahjong@gmail.com"
   }
 }
 JSON
@@ -67,7 +67,7 @@ html2=$(cat <<'HTML' | json_escape
 <html><body style='font-family: Arial, sans-serif; color:#222;'>
 <p>Quick question: do you decide on a hand too late? That’s the #1 mistake I see from losing players.</p>
 <p>If you wait too long to commit, you miss easy tiles and fall into “almost” hands. In Mahjong 101, I show you how to spot the best path early and stick to it.</p>
-<p><a href='https://winningatmahjong.shop/courses/mahjong-101.html'>Learn the fix in Mahjong 101 ($37)</a></p>
+<p><a href='https://winningatmahjong.shop/#mahjong-101'>Learn the fix in Mahjong 101 ($37)</a></p>
 <p>— The Mahjong Mastery team at winningatmahjong.shop</p>
 <p><small>Unsubscribe: *|UNSUB|*</small></p>
 </body></html>
@@ -85,7 +85,7 @@ html3=$(cat <<'HTML' | json_escape
 <li>Count remaining tiles before chasing.</li>
 </ol>
 <p>These are pulled from the Winning Quick guide, and they make a real difference. If you want the full playbook, it’s waiting for you.</p>
-<p><a href='https://winningatmahjong.shop/courses/winning-quick.html'>Get the full Winning Quick guide ($27)</a></p>
+<p><a href='https://winningatmahjong.shop/#winning-quick'>Get the full Winning Quick guide ($27)</a></p>
 <p>— The Mahjong Mastery team at winningatmahjong.shop</p>
 <p><small>Unsubscribe: *|UNSUB|*</small></p>
 </body></html>
@@ -96,7 +96,7 @@ html4=$(cat <<'HTML' | json_escape
 <html><body style='font-family: Arial, sans-serif; color:#222;'>
 <p>“I used to dread game night because I always felt behind.” That’s what Lisa told me before she joined Mahjong 101.</p>
 <p>Two weeks later she was calling her hand early, playing with confidence, and winning consistently. That can be you too.</p>
-<p><a href='https://winningatmahjong.shop/courses/mahjong-101.html'>Start with Mahjong 101 ($37)</a></p>
+<p><a href='https://winningatmahjong.shop/#mahjong-101'>Start with Mahjong 101 ($37)</a></p>
 <p>— The Mahjong Mastery team at winningatmahjong.shop</p>
 <p><small>Unsubscribe: *|UNSUB|*</small></p>
 </body></html>
@@ -106,8 +106,8 @@ HTML
 html5=$(cat <<'HTML' | json_escape
 <html><body style='font-family: Arial, sans-serif; color:#222;'>
 <p>Quick quiz — which player are you today?</p>
-<p><strong>Beginner:</strong> You’re still learning tiles and hand patterns → Start with <a href='https://winningatmahjong.shop/courses/mahjong-101.html'>Mahjong 101 ($37)</a></p>
-<p><strong>Intermediate:</strong> You know the basics but want faster, smarter wins → Grab <a href='https://winningatmahjong.shop/courses/winning-quick.html'>Winning Quick ($27)</a></p>
+<p><strong>Beginner:</strong> You’re still learning tiles and hand patterns → Start with <a href='https://winningatmahjong.shop/#mahjong-101'>Mahjong 101 ($37)</a></p>
+<p><strong>Intermediate:</strong> You know the basics but want faster, smarter wins → Grab <a href='https://winningatmahjong.shop/#winning-quick'>Winning Quick ($27)</a></p>
 <p><strong>Advanced:</strong> You want deeper strategy and consistent control → Step into <a href='https://winningatmahjong.shop/courses/mahjong-mastery.html'>Mahjong Mastery (full course)</a></p>
 <p>Pick your path now so your next game feels calm and confident. Spots and energy are always limited — don’t wait too long.</p>
 <p>— The Mahjong Mastery team at winningatmahjong.shop</p>

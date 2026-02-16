@@ -857,10 +857,10 @@ Master reads, pressure, and defense at the highest level with the RANGE-BAIT-BLO
 - 50+ advanced rules of thumb
 - 20 drill scenarios
 
-**Visit MahjongMastery.com to level up!**
+**Visit winningatmahjong.shop to level up!**
 
 ---
 
 **Happy Playing!**
 
-© 2026 MahjongMastery • www.MahjongMastery.com
+© 2026 Mahjong Mastery • www.winningatmahjong.shop

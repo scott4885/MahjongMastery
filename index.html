@@ -53,13 +53,18 @@
         <span class="logo-mark">◆</span>
         <span>Mahjong Mastery</span>
       </div>
-      <nav class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="#problem">Why It Feels Hard</a>
         <a href="#courses">Courses</a>
         <a href="#testimonials">Wins</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <button class="btn tile-btn" data-product-id="price_free_tile_guide" data-course-name="Free Tile Guide">Free Tile Guide</button>
+      <div class="nav-actions">
+        <button class="btn tile-btn" data-product-id="price_free_tile_guide" data-course-name="Free Tile Guide">Free Tile Guide</button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -170,7 +175,7 @@
           <p>Start with the level that fits your confidence — or grab the complete mastery bundle and save 30%.</p>
         </div>
         <div class="course-grid">
-          <article class="course-card highlight bundle">
+          <article class="course-card highlight bundle" id="bundle">
             <div class="bundle-badge">Best Value</div>
             <div class="course-cover">
               <img src="images/tiles-new/mahjong-tiles-realistic.svg" alt="All courses bundle cover" />
@@ -195,7 +200,7 @@
             </div>
           </article>
 
-          <article class="course-card highlight">
+          <article class="course-card highlight" id="free-tile-guide">
             <div class="course-cover">
               <img src="images/tiles-new/tile-bamboo-closeup.svg" alt="Free Tile Guide cover" />
             </div>
@@ -218,7 +223,7 @@
             </div>
           </article>
 
-          <article class="course-card">
+          <article class="course-card" id="mahjong-101">
             <div class="course-cover">
               <img src="images/tiles-new/hands-arranging-tiles.svg" alt="Mahjong 101 course cover" />
             </div>
@@ -242,7 +247,7 @@
             </div>
           </article>
 
-          <article class="course-card">
+          <article class="course-card" id="winning-quick">
             <div class="course-cover">
               <img src="images/tiles-new/tile-character-closeup.svg" alt="Winning Quick course cover" />
             </div>
@@ -265,7 +270,7 @@
             </div>
           </article>
 
-          <article class="course-card">
+          <article class="course-card" id="mahjong-201">
             <div class="course-cover">
               <img src="images/tiles-new/mahjong-tiles-realistic.svg" alt="Mahjong 201 course cover" />
             </div>
@@ -288,7 +293,7 @@
             </div>
           </article>
 
-          <article class="course-card">
+          <article class="course-card" id="mahjong-301">
             <div class="course-cover">
               <img src="images/tiles-new/winning-hand-layout.svg" alt="Mahjong 301 course cover" />
             </div>

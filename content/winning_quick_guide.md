@@ -644,13 +644,13 @@ Master the complete rules, advanced Charleston tactics, and intermediate strateg
 
 Once you're comfortable with the basics, learn the SCAN-SHAPE-COMMIT-DEFEND framework that intermediate players use to win WITHOUT relying on luck.
 
-**Visit MahjongMastery.com to continue your journey!**
+**Visit winningatmahjong.shop to continue your journey!**
 
 ---
 
 **Happy Playing—and Happy Winning!**
 
-© 2026 MahjongMastery • www.MahjongMastery.com
+© 2026 Mahjong Mastery • www.winningatmahjong.shop
 
 ---
 
