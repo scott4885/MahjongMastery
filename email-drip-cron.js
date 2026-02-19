@@ -40,6 +40,14 @@ async function apiRequest(path, method = 'GET', body = null) {
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
         try {
+          if (!data || !data.trim()) {
+            if (res.statusCode >= 400) {
+              reject(new Error(`API error ${res.statusCode}: empty response`));
+            } else {
+              resolve({});
+            }
+            return;
+          }
           const parsed = JSON.parse(data);
           if (res.statusCode >= 400) {
             reject(new Error(`API error ${res.statusCode}: ${parsed.detail || data}`));
@@ -47,7 +55,7 @@ async function apiRequest(path, method = 'GET', body = null) {
             resolve(parsed);
           }
         } catch (e) {
-          reject(e);
+          reject(new Error(`JSON parse error (status ${res.statusCode}): ${data.substring(0, 200)}`));
         }
       });
     });
@@ -83,7 +91,7 @@ async function sendCampaignToSubscriber(campaignId, email, subject) {
       settings: {
         subject_line: subject,
         from_name: 'Mahjong Mastery',
-        reply_to: 'support@winningatmahjong.shop',
+        reply_to: 'winningatmahjong@gmail.com',
         title: `Drip Day ${subject.substring(0, 20)} - ${email}`
       }
     };
