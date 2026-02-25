@@ -61,7 +61,7 @@ exports.handler = async (event) => {
 
     if (response.ok) {
       // Send welcome email asynchronously (don't block on it)
-      fetch(`${process.env.URL || 'https://winningatmahjong.shop'}/.netlify/functions/send-welcome`, {
+      fetch(`${process.env.URL || 'http://localhost:' + (process.env.PORT || '3000')}/api/send-welcome`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })

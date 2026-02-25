@@ -1,0 +1,9 @@
+.git
+node_modules
+npm-debug.log
+.env
+*.md
+social-media
+email-sequences
+email-drip-cron.js
+generate_courses.js

@@ -2,8 +2,9 @@
   "name": "mahjongmastery",
   "version": "1.0.0",
   "description": "Master Mahjong - Tips and Strategies for winning more lines - Beginner to Advanced",
-  "main": "generate_courses.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/scott4885/MahjongMastery#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "stripe": "^20.3.1"
   }
 }
