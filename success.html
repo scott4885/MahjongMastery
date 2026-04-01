@@ -8,6 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .download-box { background: #fdf8f0; border: 2px solid #8B5A5F; border-radius: 12px; padding: 28px 32px; margin: 24px 0; }
+    .download-box h2 { color: #8B5A5F; margin-top: 0; }
+    .download-list { list-style: none; padding: 0; margin: 0; }
+    .download-list li { margin: 12px 0; }
+    .download-list a { display: inline-block; background: #8B5A5F; color: white !important; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 16px; }
+    .download-list a:hover { background: #6d4448; }
+    .loading-msg { color: #888; font-style: italic; }
+    .error-msg { color: #c0392b; }
+    .email-note { background: #e8f5e9; border-radius: 8px; padding: 14px 18px; font-size: 14px; color: #555; margin-top: 16px; }
+    .email-note strong { color: #2e7d32; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -23,13 +35,24 @@
   <main>
     <section class="section">
       <div class="container final-card">
-        <h1>Thank you for joining us!</h1>
-        <p>Your purchase is complete, and your materials are on their way to your inbox. We’re so excited for you to feel calm, confident, and ready to win at your next Mahjong night.</p>
+        <h1>🀄 Thank You!</h1>
+        <p>Your purchase is confirmed. Your course materials are below — click to open right now.</p>
+
+        <div class="download-box" id="downloadBox">
+          <h2>Your Downloads</h2>
+          <p class="loading-msg" id="loadingMsg">Loading your downloads...</p>
+          <ul class="download-list" id="downloadList" style="display:none;"></ul>
+        </div>
+
+        <div class="email-note" id="emailNote" style="display:none;">
+          📧 <strong>Check your inbox</strong> — we also sent your download links to <span id="emailDisplay"></span> so you always have them.
+        </div>
+
         <div class="final-actions">
           <a class="btn primary" href="index.html#courses">Explore more courses</a>
           <a class="btn ghost" href="index.html#faq">View FAQ</a>
         </div>
-        <p class="fine-print">Need help? Email winningatmahjong@gmail.com and we’ll take care of you.</p>
+        <p class="fine-print">Need help? Email winningatmahjong@gmail.com — we respond fast.</p>
       </div>
     </section>
   </main>
@@ -47,5 +70,56 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (async () => {
+      const params = new URLSearchParams(window.location.search);
+      const sessionId = params.get('session_id');
+      const loadingMsg = document.getElementById('loadingMsg');
+      const downloadList = document.getElementById('downloadList');
+      const emailNote = document.getElementById('emailNote');
+      const emailDisplay = document.getElementById('emailDisplay');
+
+      if (!sessionId) {
+        loadingMsg.textContent = 'No purchase session found. If you just purchased, check your email for your download links.';
+        loadingMsg.className = 'error-msg';
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/get-purchase?session_id=' + encodeURIComponent(sessionId));
+        const data = await res.json();
+
+        if (!res.ok || !data.downloads || data.downloads.length === 0) {
+          loadingMsg.textContent = 'Could not load downloads automatically. Please check your email — links were sent there!';
+          loadingMsg.className = 'error-msg';
+          return;
+        }
+
+        loadingMsg.style.display = 'none';
+        downloadList.style.display = 'block';
+
+        data.downloads.forEach(item => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = item.url;
+          a.textContent = '📖 Open ' + item.name + ' →';
+          a.target = '_blank';
+          li.appendChild(a);
+          downloadList.appendChild(li);
+        });
+
+        if (data.email) {
+          emailDisplay.textContent = data.email;
+          emailNote.style.display = 'block';
+        }
+
+      } catch (err) {
+        console.error('Download load error:', err);
+        loadingMsg.textContent = 'Could not load downloads. Check your email for download links, or contact winningatmahjong@gmail.com.';
+        loadingMsg.className = 'error-msg';
+      }
+    })();
+  </script>
 </body>
 </html>
