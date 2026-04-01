@@ -60,6 +60,7 @@ const checkoutHandler = require("./netlify/functions/create-checkout-session");
 const subscribeHandler = require("./netlify/functions/subscribe");
 const adminDataHandler = require("./netlify/functions/admin-data");
 const sendWelcomeHandler = require("./netlify/functions/send-welcome");
+const getPurchaseHandler = require("./netlify/functions/get-purchase");
 
 app.options("/api/*", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -72,6 +73,7 @@ app.post("/api/create-checkout-session", netlifyToExpress(checkoutHandler.handle
 app.post("/api/subscribe", netlifyToExpress(subscribeHandler.handler));
 app.get("/api/admin-data", netlifyToExpress(adminDataHandler.handler));
 app.post("/api/send-welcome", netlifyToExpress(sendWelcomeHandler.handler));
+app.get("/api/get-purchase", netlifyToExpress(getPurchaseHandler.handler));
 
 // ─── Legacy Netlify function URLs (keep working just in case) ────────────────
 app.post("/.netlify/functions/create-checkout-session", netlifyToExpress(checkoutHandler.handler));
@@ -79,6 +81,7 @@ app.post("/.netlify/functions/subscribe", netlifyToExpress(subscribeHandler.hand
 app.get("/.netlify/functions/admin-data", netlifyToExpress(adminDataHandler.handler));
 app.post("/.netlify/functions/send-welcome", netlifyToExpress(sendWelcomeHandler.handler));
 app.post("/.netlify/functions/webhook", netlifyToExpress(webhookHandler.handler));
+app.get("/.netlify/functions/get-purchase", netlifyToExpress(getPurchaseHandler.handler));
 
 // ─── Static files ────────────────────────────────────────────────────────────
 app.use(express.static(path.join(__dirname), { index: "index.html" }));
